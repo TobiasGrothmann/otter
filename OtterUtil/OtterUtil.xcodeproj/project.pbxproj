@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84093A2E27D90A8E008B5EEF /* jc_voronoi.h in Headers */ = {isa = PBXBuildFile; fileRef = 84093A2C27D90A8E008B5EEF /* jc_voronoi.h */; };
+		84093A2F27D90A8E008B5EEF /* jc_voronoi_clip.h in Headers */ = {isa = PBXBuildFile; fileRef = 84093A2D27D90A8E008B5EEF /* jc_voronoi_clip.h */; };
+		840EE3E027CD17B100FB8913 /* libOtterUtil.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845BFBA8245752AD000BA648 /* libOtterUtil.a */; };
+		840FAA5327CD4556008D3330 /* ttfParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 840FAA5227CD4556008D3330 /* ttfParser.h */; };
+		841A52AA2705AC4E000AEB30 /* simple_svg_1.0.0.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 841A52A92705AC4E000AEB30 /* simple_svg_1.0.0.hpp */; };
+		845BFBAC245752AD000BA648 /* OtterUtil.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 845BFBAB245752AD000BA648 /* OtterUtil.hpp */; };
+		845BFBBA245753CE000BA648 /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845BFBB7245753CE000BA648 /* Font.cpp */; };
+		845BFBBC245753CE000BA648 /* Font.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 845BFBB9245753CE000BA648 /* Font.hpp */; };
+		848FCBD226A9C82200829A8A /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 848FCBD026A9C82200829A8A /* Image.cpp */; };
+		848FCBD326A9C82200829A8A /* Image.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 848FCBD126A9C82200829A8A /* Image.hpp */; };
+		849A82E027984F9C00DFBED1 /* QrCode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8408A25727773B190065AAC6 /* QrCode.hpp */; };
+		849A82E127984FA300DFBED1 /* QrCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8408A25627773B190065AAC6 /* QrCode.cpp */; };
+		84C75FCD27920B6100C22E20 /* Voronoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C75FCB27920B6100C22E20 /* Voronoi.cpp */; };
+		84C75FCE27920B6100C22E20 /* Voronoi.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84C75FCC27920B6100C22E20 /* Voronoi.hpp */; };
+		84C7855A246D3B15005779A9 /* nanosvg.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C78558246D3B15005779A9 /* nanosvg.h */; };
+		84C7855B246D3B15005779A9 /* nanosvgrast.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C78559246D3B15005779A9 /* nanosvgrast.h */; };
+		84C7855E246D3B9D005779A9 /* SVG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C7855C246D3B9D005779A9 /* SVG.cpp */; };
+		84C7855F246D3B9D005779A9 /* SVG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84C7855D246D3B9D005779A9 /* SVG.hpp */; };
+		84F3DC9126834BB300F7CE63 /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DC8F26834BB300F7CE63 /* clipper.cpp */; };
+		84F3DC9226834BB300F7CE63 /* clipper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84F3DC9026834BB300F7CE63 /* clipper.hpp */; };
+		84F3DC9626834BD100F7CE63 /* Boolean.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DC9426834BD100F7CE63 /* Boolean.cpp */; };
+		84F3DC9726834BD100F7CE63 /* Boolean.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84F3DC9526834BD100F7CE63 /* Boolean.hpp */; };
+		84F3DC9B26834C1D00F7CE63 /* ClipperConvert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DC9926834C1D00F7CE63 /* ClipperConvert.cpp */; };
+		84F3DC9C26834C1D00F7CE63 /* ClipperConvert.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84F3DC9A26834C1D00F7CE63 /* ClipperConvert.hpp */; };
+		84F3DCA1268350AF00F7CE63 /* Offset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DC9F268350AF00F7CE63 /* Offset.cpp */; };
+		84F3DCA2268350AF00F7CE63 /* Offset.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84F3DCA0268350AF00F7CE63 /* Offset.hpp */; };
+		84F83E2127D528D000A651FD /* VoronoiCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F83E1F27D528D000A651FD /* VoronoiCell.cpp */; };
+		84F83E2227D528D000A651FD /* VoronoiCell.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84F83E2027D528D000A651FD /* VoronoiCell.hpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		840EE3DD27CD175900FB8913 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../../build/otterUtil;
+			dstSubfolderSpec = 7;
+			files = (
+				840EE3E027CD17B100FB8913 /* libOtterUtil.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8408A25627773B190065AAC6 /* QrCode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QrCode.cpp; sourceTree = "<group>"; };
+		8408A25727773B190065AAC6 /* QrCode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QrCode.hpp; sourceTree = "<group>"; };
+		84093A2C27D90A8E008B5EEF /* jc_voronoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jc_voronoi.h; sourceTree = "<group>"; };
+		84093A2D27D90A8E008B5EEF /* jc_voronoi_clip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jc_voronoi_clip.h; sourceTree = "<group>"; };
+		840FAA5227CD4556008D3330 /* ttfParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttfParser.h; sourceTree = "<group>"; };
+		841A52A92705AC4E000AEB30 /* simple_svg_1.0.0.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = simple_svg_1.0.0.hpp; sourceTree = "<group>"; };
+		845BFBA8245752AD000BA648 /* libOtterUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOtterUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		845BFBAB245752AD000BA648 /* OtterUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OtterUtil.hpp; sourceTree = "<group>"; };
+		845BFBB7245753CE000BA648 /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
+		845BFBB9245753CE000BA648 /* Font.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Font.hpp; sourceTree = "<group>"; };
+		848FCBD026A9C82200829A8A /* Image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
+		848FCBD126A9C82200829A8A /* Image.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Image.hpp; sourceTree = "<group>"; };
+		84C75FCB27920B6100C22E20 /* Voronoi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Voronoi.cpp; sourceTree = "<group>"; };
+		84C75FCC27920B6100C22E20 /* Voronoi.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Voronoi.hpp; sourceTree = "<group>"; };
+		84C78558246D3B15005779A9 /* nanosvg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanosvg.h; sourceTree = "<group>"; };
+		84C78559246D3B15005779A9 /* nanosvgrast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanosvgrast.h; sourceTree = "<group>"; };
+		84C7855C246D3B9D005779A9 /* SVG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SVG.cpp; sourceTree = "<group>"; };
+		84C7855D246D3B9D005779A9 /* SVG.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SVG.hpp; sourceTree = "<group>"; };
+		84F3DC8F26834BB300F7CE63 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
+		84F3DC9026834BB300F7CE63 /* clipper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = clipper.hpp; sourceTree = "<group>"; };
+		84F3DC9326834BBB00F7CE63 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		84F3DC9426834BD100F7CE63 /* Boolean.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Boolean.cpp; sourceTree = "<group>"; };
+		84F3DC9526834BD100F7CE63 /* Boolean.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Boolean.hpp; sourceTree = "<group>"; };
+		84F3DC9926834C1D00F7CE63 /* ClipperConvert.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClipperConvert.cpp; sourceTree = "<group>"; };
+		84F3DC9A26834C1D00F7CE63 /* ClipperConvert.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClipperConvert.hpp; sourceTree = "<group>"; };
+		84F3DC9F268350AF00F7CE63 /* Offset.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Offset.cpp; sourceTree = "<group>"; };
+		84F3DCA0268350AF00F7CE63 /* Offset.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Offset.hpp; sourceTree = "<group>"; };
+		84F83E1F27D528D000A651FD /* VoronoiCell.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VoronoiCell.cpp; sourceTree = "<group>"; };
+		84F83E2027D528D000A651FD /* VoronoiCell.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VoronoiCell.hpp; sourceTree = "<group>"; };
+		84F83E2727D54DC100A651FD /* stl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stl.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		845BFBA6245752AD000BA648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8408A25527773B020065AAC6 /* QrCode */ = {
+			isa = PBXGroup;
+			children = (
+				8408A25627773B190065AAC6 /* QrCode.cpp */,
+				8408A25727773B190065AAC6 /* QrCode.hpp */,
+			);
+			path = QrCode;
+			sourceTree = "<group>";
+		};
+		84093A2B27D90A8E008B5EEF /* jc_voronoi */ = {
+			isa = PBXGroup;
+			children = (
+				84093A2C27D90A8E008B5EEF /* jc_voronoi.h */,
+				84093A2D27D90A8E008B5EEF /* jc_voronoi_clip.h */,
+			);
+			path = jc_voronoi;
+			sourceTree = "<group>";
+		};
+		841A52A82705AC4E000AEB30 /* simple_svg */ = {
+			isa = PBXGroup;
+			children = (
+				841A52A92705AC4E000AEB30 /* simple_svg_1.0.0.hpp */,
+			);
+			path = simple_svg;
+			sourceTree = "<group>";
+		};
+		845BFB9F245752AD000BA648 = {
+			isa = PBXGroup;
+			children = (
+				845BFBAA245752AD000BA648 /* OtterUtil */,
+				845BFBA9245752AD000BA648 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		845BFBA9245752AD000BA648 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				845BFBA8245752AD000BA648 /* libOtterUtil.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		845BFBAA245752AD000BA648 /* OtterUtil */ = {
+			isa = PBXGroup;
+			children = (
+				84C75FC6279207FD00C22E20 /* Voronoi */,
+				848FCBCF26A9C81B00829A8A /* Image */,
+				84F3DCB02684750C00F7CE63 /* Clipper */,
+				8408A25527773B020065AAC6 /* QrCode */,
+				84C78557246D3B15005779A9 /* Svg */,
+				845BFBB6245753CE000BA648 /* Font */,
+				845BFBAB245752AD000BA648 /* OtterUtil.hpp */,
+				84F83E2727D54DC100A651FD /* stl.hpp */,
+			);
+			path = OtterUtil;
+			sourceTree = "<group>";
+		};
+		845BFBB6245753CE000BA648 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DCB22684755200F7CE63 /* ttfParser */,
+				845BFBB7245753CE000BA648 /* Font.cpp */,
+				845BFBB9245753CE000BA648 /* Font.hpp */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		848FCBCF26A9C81B00829A8A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				848FCBD026A9C82200829A8A /* Image.cpp */,
+				848FCBD126A9C82200829A8A /* Image.hpp */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		84C75FC6279207FD00C22E20 /* Voronoi */ = {
+			isa = PBXGroup;
+			children = (
+				84093A2B27D90A8E008B5EEF /* jc_voronoi */,
+				84C75FCB27920B6100C22E20 /* Voronoi.cpp */,
+				84C75FCC27920B6100C22E20 /* Voronoi.hpp */,
+				84F83E1F27D528D000A651FD /* VoronoiCell.cpp */,
+				84F83E2027D528D000A651FD /* VoronoiCell.hpp */,
+			);
+			path = Voronoi;
+			sourceTree = "<group>";
+		};
+		84C78557246D3B15005779A9 /* Svg */ = {
+			isa = PBXGroup;
+			children = (
+				841A52A82705AC4E000AEB30 /* simple_svg */,
+				84F3DCB12684754900F7CE63 /* nanosvg */,
+				84C7855C246D3B9D005779A9 /* SVG.cpp */,
+				84C7855D246D3B9D005779A9 /* SVG.hpp */,
+			);
+			path = Svg;
+			sourceTree = "<group>";
+		};
+		84F3DC8A26834B6100F7CE63 /* clipper */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DC8F26834BB300F7CE63 /* clipper.cpp */,
+				84F3DC9026834BB300F7CE63 /* clipper.hpp */,
+				84F3DC9326834BBB00F7CE63 /* License.txt */,
+			);
+			path = clipper;
+			sourceTree = "<group>";
+		};
+		84F3DC9826834C0400F7CE63 /* Boolean */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DC9426834BD100F7CE63 /* Boolean.cpp */,
+				84F3DC9526834BD100F7CE63 /* Boolean.hpp */,
+			);
+			path = Boolean;
+			sourceTree = "<group>";
+		};
+		84F3DC9D2683507600F7CE63 /* Offset */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DC9F268350AF00F7CE63 /* Offset.cpp */,
+				84F3DCA0268350AF00F7CE63 /* Offset.hpp */,
+			);
+			path = Offset;
+			sourceTree = "<group>";
+		};
+		84F3DC9E2683507C00F7CE63 /* ClipperConvert */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DC9926834C1D00F7CE63 /* ClipperConvert.cpp */,
+				84F3DC9A26834C1D00F7CE63 /* ClipperConvert.hpp */,
+			);
+			path = ClipperConvert;
+			sourceTree = "<group>";
+		};
+		84F3DCB02684750C00F7CE63 /* Clipper */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DC8A26834B6100F7CE63 /* clipper */,
+				84F3DC9D2683507600F7CE63 /* Offset */,
+				84F3DC9826834C0400F7CE63 /* Boolean */,
+				84F3DC9E2683507C00F7CE63 /* ClipperConvert */,
+			);
+			path = Clipper;
+			sourceTree = "<group>";
+		};
+		84F3DCB12684754900F7CE63 /* nanosvg */ = {
+			isa = PBXGroup;
+			children = (
+				84C78558246D3B15005779A9 /* nanosvg.h */,
+				84C78559246D3B15005779A9 /* nanosvgrast.h */,
+			);
+			path = nanosvg;
+			sourceTree = "<group>";
+		};
+		84F3DCB22684755200F7CE63 /* ttfParser */ = {
+			isa = PBXGroup;
+			children = (
+				840FAA5227CD4556008D3330 /* ttfParser.h */,
+			);
+			path = ttfParser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		845BFBA4245752AD000BA648 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849A82E027984F9C00DFBED1 /* QrCode.hpp in Headers */,
+				84F3DC9726834BD100F7CE63 /* Boolean.hpp in Headers */,
+				845BFBBC245753CE000BA648 /* Font.hpp in Headers */,
+				841A52AA2705AC4E000AEB30 /* simple_svg_1.0.0.hpp in Headers */,
+				84C7855B246D3B15005779A9 /* nanosvgrast.h in Headers */,
+				84F3DC9C26834C1D00F7CE63 /* ClipperConvert.hpp in Headers */,
+				84F3DCA2268350AF00F7CE63 /* Offset.hpp in Headers */,
+				84C7855F246D3B9D005779A9 /* SVG.hpp in Headers */,
+				848FCBD326A9C82200829A8A /* Image.hpp in Headers */,
+				84F83E2227D528D000A651FD /* VoronoiCell.hpp in Headers */,
+				84093A2E27D90A8E008B5EEF /* jc_voronoi.h in Headers */,
+				84C75FCE27920B6100C22E20 /* Voronoi.hpp in Headers */,
+				845BFBAC245752AD000BA648 /* OtterUtil.hpp in Headers */,
+				84093A2F27D90A8E008B5EEF /* jc_voronoi_clip.h in Headers */,
+				840FAA5327CD4556008D3330 /* ttfParser.h in Headers */,
+				84F3DC9226834BB300F7CE63 /* clipper.hpp in Headers */,
+				84C7855A246D3B15005779A9 /* nanosvg.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		845BFBA7245752AD000BA648 /* OtterUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845BFBB3245752AD000BA648 /* Build configuration list for PBXNativeTarget "OtterUtil" */;
+			buildPhases = (
+				845BFBA4245752AD000BA648 /* Headers */,
+				845BFBA5245752AD000BA648 /* Sources */,
+				845BFBA6245752AD000BA648 /* Frameworks */,
+				840EE3DD27CD175900FB8913 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OtterUtil;
+			productName = OtterUtil;
+			productReference = 845BFBA8245752AD000BA648 /* libOtterUtil.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		845BFBA0245752AD000BA648 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1320;
+				ORGANIZATIONNAME = "Tobias Grothmann";
+				TargetAttributes = {
+					845BFBA7245752AD000BA648 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 845BFBA3245752AD000BA648 /* Build configuration list for PBXProject "OtterUtil" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 845BFB9F245752AD000BA648;
+			productRefGroup = 845BFBA9245752AD000BA648 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				845BFBA7245752AD000BA648 /* OtterUtil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		845BFBA5245752AD000BA648 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849A82E127984FA300DFBED1 /* QrCode.cpp in Sources */,
+				84F3DC9126834BB300F7CE63 /* clipper.cpp in Sources */,
+				84F3DC9626834BD100F7CE63 /* Boolean.cpp in Sources */,
+				84C7855E246D3B9D005779A9 /* SVG.cpp in Sources */,
+				845BFBBA245753CE000BA648 /* Font.cpp in Sources */,
+				84F3DC9B26834C1D00F7CE63 /* ClipperConvert.cpp in Sources */,
+				84F83E2127D528D000A651FD /* VoronoiCell.cpp in Sources */,
+				848FCBD226A9C82200829A8A /* Image.cpp in Sources */,
+				84C75FCD27920B6100C22E20 /* Voronoi.cpp in Sources */,
+				84F3DCA1268350AF00F7CE63 /* Offset.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		845BFBB1245752AD000BA648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		845BFBB2245752AD000BA648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		845BFBB4245752AD000BA648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Otter/Otter\"";
+				INSTALL_PATH = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../build/otter",
+					/opt/homebrew/Cellar/opencv/4.5.5/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lotter",
+					"-lopencv_gapi",
+					"-lopencv_stitching",
+					"-lopencv_alphamat",
+					"-lopencv_aruco",
+					"-lopencv_barcode",
+					"-lopencv_bgsegm",
+					"-lopencv_bioinspired",
+					"-lopencv_ccalib",
+					"-lopencv_dnn_objdetect",
+					"-lopencv_dnn_superres",
+					"-lopencv_dpm",
+					"-lopencv_face",
+					"-lopencv_freetype",
+					"-lopencv_fuzzy",
+					"-lopencv_hfs",
+					"-lopencv_img_hash",
+					"-lopencv_intensity_transform",
+					"-lopencv_line_descriptor",
+					"-lopencv_mcc",
+					"-lopencv_quality",
+					"-lopencv_rapid",
+					"-lopencv_reg",
+					"-lopencv_rgbd",
+					"-lopencv_saliency",
+					"-lopencv_sfm",
+					"-lopencv_stereo",
+					"-lopencv_structured_light",
+					"-lopencv_phase_unwrapping",
+					"-lopencv_superres",
+					"-lopencv_optflow",
+					"-lopencv_surface_matching",
+					"-lopencv_tracking",
+					"-lopencv_highgui",
+					"-lopencv_datasets",
+					"-lopencv_text",
+					"-lopencv_plot",
+					"-lopencv_videostab",
+					"-lopencv_videoio",
+					"-lopencv_viz",
+					"-lopencv_wechat_qrcode",
+					"-lopencv_xfeatures2d",
+					"-lopencv_shape",
+					"-lopencv_ml",
+					"-lopencv_ximgproc",
+					"-lopencv_video",
+					"-lopencv_xobjdetect",
+					"-lopencv_objdetect",
+					"-lopencv_calib3d",
+					"-lopencv_imgcodecs",
+					"-lopencv_features2d",
+					"-lopencv_dnn",
+					"-lopencv_flann",
+					"-lopencv_xphoto",
+					"-lopencv_photo",
+					"-lopencv_imgproc",
+					"-lopencv_core",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				SYSTEM_HEADER_SEARCH_PATHS = /opt/homebrew/opt/opencv/include/opencv4;
+			};
+			name = Debug;
+		};
+		845BFBB5245752AD000BA648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Otter/Otter\"";
+				INSTALL_PATH = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../build/otter",
+					/opt/homebrew/Cellar/opencv/4.5.5/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lotter",
+					"-lopencv_gapi",
+					"-lopencv_stitching",
+					"-lopencv_alphamat",
+					"-lopencv_aruco",
+					"-lopencv_barcode",
+					"-lopencv_bgsegm",
+					"-lopencv_bioinspired",
+					"-lopencv_ccalib",
+					"-lopencv_dnn_objdetect",
+					"-lopencv_dnn_superres",
+					"-lopencv_dpm",
+					"-lopencv_face",
+					"-lopencv_freetype",
+					"-lopencv_fuzzy",
+					"-lopencv_hfs",
+					"-lopencv_img_hash",
+					"-lopencv_intensity_transform",
+					"-lopencv_line_descriptor",
+					"-lopencv_mcc",
+					"-lopencv_quality",
+					"-lopencv_rapid",
+					"-lopencv_reg",
+					"-lopencv_rgbd",
+					"-lopencv_saliency",
+					"-lopencv_sfm",
+					"-lopencv_stereo",
+					"-lopencv_structured_light",
+					"-lopencv_phase_unwrapping",
+					"-lopencv_superres",
+					"-lopencv_optflow",
+					"-lopencv_surface_matching",
+					"-lopencv_tracking",
+					"-lopencv_highgui",
+					"-lopencv_datasets",
+					"-lopencv_text",
+					"-lopencv_plot",
+					"-lopencv_videostab",
+					"-lopencv_videoio",
+					"-lopencv_viz",
+					"-lopencv_wechat_qrcode",
+					"-lopencv_xfeatures2d",
+					"-lopencv_shape",
+					"-lopencv_ml",
+					"-lopencv_ximgproc",
+					"-lopencv_video",
+					"-lopencv_xobjdetect",
+					"-lopencv_objdetect",
+					"-lopencv_calib3d",
+					"-lopencv_imgcodecs",
+					"-lopencv_features2d",
+					"-lopencv_dnn",
+					"-lopencv_flann",
+					"-lopencv_xphoto",
+					"-lopencv_photo",
+					"-lopencv_imgproc",
+					"-lopencv_core",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				SYSTEM_HEADER_SEARCH_PATHS = /opt/homebrew/opt/opencv/include/opencv4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		845BFBA3245752AD000BA648 /* Build configuration list for PBXProject "OtterUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845BFBB1245752AD000BA648 /* Debug */,
+				845BFBB2245752AD000BA648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		845BFBB3245752AD000BA648 /* Build configuration list for PBXNativeTarget "OtterUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845BFBB4245752AD000BA648 /* Debug */,
+				845BFBB5245752AD000BA648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 845BFBA0245752AD000BA648 /* Project object */;
+}

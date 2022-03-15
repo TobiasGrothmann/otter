@@ -1,0 +1,15 @@
+[Unit]
+Description=otterServer
+Requires=network-online.target
+After=network-online.target nss-lookup.target
+
+[Service]
+Type=exec
+Restart=no
+RestartSec=5
+User=root
+UMask=0000
+ExecStart=/usr/local/bin/otterServer
+
+[Install]
+WantedBy=multi-user.target

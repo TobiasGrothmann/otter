@@ -1,0 +1,25 @@
+# osx
+**/.DS_Store
+
+# python
+python/__pycache__/
+
+# xcode
+*.xcuserstate
+**Build/
+
+# builds
+build/
+*lib
+
+# C++
+*.o
+*.gch
+*.tmp
+*.d
+
+# UI
+imgui.ini
+
+# other
+TODO.txt

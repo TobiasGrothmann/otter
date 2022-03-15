@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05318E0F274C397200A8DE2E /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05318E0E274C397200A8DE2E /* GameController.framework */; };
+		8309BDA8253CCC080045E2A1 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8309BDA0253CCBC10045E2A1 /* main.mm */; };
+		8309BDC6253CCCFE0045E2A1 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8309BDC5253CCCFE0045E2A1 /* AppKit.framework */; };
+		8309BE04253CDAB60045E2A1 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8309BDFA253CDAAE0045E2A1 /* MainMenu.storyboard */; };
+		83BBE9EC20EB471700295997 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BBE9EA20EB471700295997 /* MetalKit.framework */; };
+		83BBE9ED20EB471700295997 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BBE9EB20EB471700295997 /* Metal.framework */; };
+		840B4E9327CFA04700DCD69D /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840B4E8827CFA04700DCD69D /* imgui_widgets.cpp */; };
+		840B4E9527CFA04700DCD69D /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840B4E8B27CFA04700DCD69D /* imgui_draw.cpp */; };
+		840B4E9727CFA04700DCD69D /* imgui_tables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840B4E8C27CFA04700DCD69D /* imgui_tables.cpp */; };
+		840B4E9927CFA04700DCD69D /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840B4E8D27CFA04700DCD69D /* imgui_demo.cpp */; };
+		840B4E9B27CFA04700DCD69D /* imgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840B4E8E27CFA04700DCD69D /* imgui.cpp */; };
+		840B4EA127CFA05D00DCD69D /* imgui_impl_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 840B4E9C27CFA05D00DCD69D /* imgui_impl_osx.mm */; };
+		840B4EA327CFA05D00DCD69D /* imgui_impl_metal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 840B4E9D27CFA05D00DCD69D /* imgui_impl_metal.mm */; };
+		843B627E27D0E1EE007AE888 /* ScaleHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843B627C27D0DFB4007AE888 /* ScaleHandler.cpp */; };
+		843BC9F127D62B300092A0EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843BC9F027D62B300092A0EB /* Images.xcassets */; };
+		848319F827CFA43F00157D32 /* MainUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 848319F527CFA43F00157D32 /* MainUI.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05318E0E274C397200A8DE2E /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		8307E7DA20E9F9C900473790 /* OtterUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtterUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8309BDA0253CCBC10045E2A1 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		8309BDC5253CCCFE0045E2A1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8309BDFA253CDAAE0045E2A1 /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
+		8309BDFB253CDAAE0045E2A1 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		83BBE9EA20EB471700295997 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		83BBE9EB20EB471700295997 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		83BBE9EE20EB471C00295997 /* ModelIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ModelIO.framework; path = System/Library/Frameworks/ModelIO.framework; sourceTree = SDKROOT; };
+		840B4E8727CFA04700DCD69D /* imgui_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imgui_internal.h; path = imgui/imgui_internal.h; sourceTree = "<group>"; };
+		840B4E8827CFA04700DCD69D /* imgui_widgets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imgui_widgets.cpp; path = imgui/imgui_widgets.cpp; sourceTree = "<group>"; };
+		840B4E8927CFA04700DCD69D /* imgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imgui.h; path = imgui/imgui.h; sourceTree = "<group>"; };
+		840B4E8A27CFA04700DCD69D /* imstb_rectpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imstb_rectpack.h; path = imgui/imstb_rectpack.h; sourceTree = "<group>"; };
+		840B4E8B27CFA04700DCD69D /* imgui_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imgui_draw.cpp; path = imgui/imgui_draw.cpp; sourceTree = "<group>"; };
+		840B4E8C27CFA04700DCD69D /* imgui_tables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imgui_tables.cpp; path = imgui/imgui_tables.cpp; sourceTree = "<group>"; };
+		840B4E8D27CFA04700DCD69D /* imgui_demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imgui_demo.cpp; path = imgui/imgui_demo.cpp; sourceTree = "<group>"; };
+		840B4E8E27CFA04700DCD69D /* imgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imgui.cpp; path = imgui/imgui.cpp; sourceTree = "<group>"; };
+		840B4E8F27CFA04700DCD69D /* imconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imconfig.h; path = imgui/imconfig.h; sourceTree = "<group>"; };
+		840B4E9027CFA04700DCD69D /* imstb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imstb_textedit.h; path = imgui/imstb_textedit.h; sourceTree = "<group>"; };
+		840B4E9127CFA04700DCD69D /* imstb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imstb_truetype.h; path = imgui/imstb_truetype.h; sourceTree = "<group>"; };
+		840B4E9C27CFA05D00DCD69D /* imgui_impl_osx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = imgui_impl_osx.mm; path = imgui/backends/imgui_impl_osx.mm; sourceTree = "<group>"; };
+		840B4E9D27CFA05D00DCD69D /* imgui_impl_metal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = imgui_impl_metal.mm; path = imgui/backends/imgui_impl_metal.mm; sourceTree = "<group>"; };
+		840B4E9E27CFA05D00DCD69D /* imgui_impl_metal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imgui_impl_metal.h; path = imgui/backends/imgui_impl_metal.h; sourceTree = "<group>"; };
+		840B4E9F27CFA05D00DCD69D /* imgui_impl_osx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imgui_impl_osx.h; path = imgui/backends/imgui_impl_osx.h; sourceTree = "<group>"; };
+		843B627C27D0DFB4007AE888 /* ScaleHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ScaleHandler.cpp; sourceTree = "<group>"; };
+		843B627D27D0DFB4007AE888 /* ScaleHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ScaleHandler.hpp; sourceTree = "<group>"; };
+		843BC9F027D62B300092A0EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OtterUI_macos/Images.xcassets; sourceTree = "<group>"; };
+		848319F327CFA43F00157D32 /* MainUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainUI.hpp; sourceTree = "<group>"; };
+		848319F427CFA43F00157D32 /* State.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = State.hpp; sourceTree = "<group>"; };
+		848319F527CFA43F00157D32 /* MainUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainUI.cpp; sourceTree = "<group>"; };
+		848319F627CFA43F00157D32 /* core.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = core.hpp; sourceTree = "<group>"; };
+		848319F927CFAEDF00157D32 /* OtterUIArgs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OtterUIArgs.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8307E7D720E9F9C900473790 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8309BDC6253CCCFE0045E2A1 /* AppKit.framework in Frameworks */,
+				83BBE9EC20EB471700295997 /* MetalKit.framework in Frameworks */,
+				05318E0F274C397200A8DE2E /* GameController.framework in Frameworks */,
+				83BBE9ED20EB471700295997 /* Metal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8307E7B520E9F9C700473790 = {
+			isa = PBXGroup;
+			children = (
+				843BC9F027D62B300092A0EB /* Images.xcassets */,
+				8309BD9E253CCBA70045E2A1 /* OtterUI */,
+				8307E7C520E9F9C900473790 /* Products */,
+				83BBE9E320EB46B800295997 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8307E7C520E9F9C900473790 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8307E7DA20E9F9C900473790 /* OtterUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8309BD9E253CCBA70045E2A1 /* OtterUI */ = {
+			isa = PBXGroup;
+			children = (
+				83BBE9F020EB544400295997 /* imgui */,
+				8309BDF9253CDAAE0045E2A1 /* macOS */,
+				848319F227CFA43F00157D32 /* src */,
+				8309BDA0253CCBC10045E2A1 /* main.mm */,
+				848319F927CFAEDF00157D32 /* OtterUIArgs.hpp */,
+			);
+			name = OtterUI;
+			sourceTree = "<group>";
+		};
+		8309BDF9253CDAAE0045E2A1 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				8309BDFA253CDAAE0045E2A1 /* MainMenu.storyboard */,
+				8309BDFB253CDAAE0045E2A1 /* Info-macOS.plist */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		83BBE9E320EB46B800295997 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05318E0E274C397200A8DE2E /* GameController.framework */,
+				8309BDC5253CCCFE0045E2A1 /* AppKit.framework */,
+				83BBE9EE20EB471C00295997 /* ModelIO.framework */,
+				83BBE9EB20EB471700295997 /* Metal.framework */,
+				83BBE9EA20EB471700295997 /* MetalKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83BBE9F020EB544400295997 /* imgui */ = {
+			isa = PBXGroup;
+			children = (
+				840B4EA427CFA07700DCD69D /* backends */,
+				840B4E8F27CFA04700DCD69D /* imconfig.h */,
+				840B4E8D27CFA04700DCD69D /* imgui_demo.cpp */,
+				840B4E8B27CFA04700DCD69D /* imgui_draw.cpp */,
+				840B4E8727CFA04700DCD69D /* imgui_internal.h */,
+				840B4E8C27CFA04700DCD69D /* imgui_tables.cpp */,
+				840B4E8827CFA04700DCD69D /* imgui_widgets.cpp */,
+				840B4E8927CFA04700DCD69D /* imgui.h */,
+				840B4E8E27CFA04700DCD69D /* imgui.cpp */,
+				840B4E8A27CFA04700DCD69D /* imstb_rectpack.h */,
+				840B4E9027CFA04700DCD69D /* imstb_textedit.h */,
+				840B4E9127CFA04700DCD69D /* imstb_truetype.h */,
+			);
+			name = imgui;
+			sourceTree = "<group>";
+		};
+		840B4EA427CFA07700DCD69D /* backends */ = {
+			isa = PBXGroup;
+			children = (
+				840B4E9E27CFA05D00DCD69D /* imgui_impl_metal.h */,
+				840B4E9D27CFA05D00DCD69D /* imgui_impl_metal.mm */,
+				840B4E9F27CFA05D00DCD69D /* imgui_impl_osx.h */,
+				840B4E9C27CFA05D00DCD69D /* imgui_impl_osx.mm */,
+			);
+			name = backends;
+			sourceTree = "<group>";
+		};
+		848319F227CFA43F00157D32 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				848319F327CFA43F00157D32 /* MainUI.hpp */,
+				848319F527CFA43F00157D32 /* MainUI.cpp */,
+				843B627D27D0DFB4007AE888 /* ScaleHandler.hpp */,
+				843B627C27D0DFB4007AE888 /* ScaleHandler.cpp */,
+				848319F427CFA43F00157D32 /* State.hpp */,
+				848319F627CFA43F00157D32 /* core.hpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8307E7D920E9F9C900473790 /* OtterUI_macos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8307E7F320E9F9C900473790 /* Build configuration list for PBXNativeTarget "OtterUI_macos" */;
+			buildPhases = (
+				8307E7D620E9F9C900473790 /* Sources */,
+				8307E7D720E9F9C900473790 /* Frameworks */,
+				8307E7D820E9F9C900473790 /* Resources */,
+				8416461327D8C1B700667BFB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OtterUI_macos;
+			productName = "imguiex macOS";
+			productReference = 8307E7DA20E9F9C900473790 /* OtterUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8307E7B620E9F9C700473790 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = NO;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Warren Moore";
+				TargetAttributes = {
+					8307E7D920E9F9C900473790 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8307E7B920E9F9C700473790 /* Build configuration list for PBXProject "OtterUI" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8307E7B520E9F9C700473790;
+			productRefGroup = 8307E7C520E9F9C900473790 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8307E7D920E9F9C900473790 /* OtterUI_macos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8307E7D820E9F9C900473790 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8309BE04253CDAB60045E2A1 /* MainMenu.storyboard in Resources */,
+				843BC9F127D62B300092A0EB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8416461327D8C1B700667BFB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+				"",
+			);
+			inputPaths = (
+				"$(INSTALL_DIR)/$(FULL_PRODUCT_NAME)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(INSTALL_PATH)/",
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "echo \"INSTALLING $SCRIPT_INPUT_FILE_0 TO $SCRIPT_OUTPUT_FILE_0\"\ncp -rf $SCRIPT_INPUT_FILE_0 $SCRIPT_OUTPUT_FILE_0\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8307E7D620E9F9C900473790 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843B627E27D0E1EE007AE888 /* ScaleHandler.cpp in Sources */,
+				840B4E9B27CFA04700DCD69D /* imgui.cpp in Sources */,
+				840B4EA327CFA05D00DCD69D /* imgui_impl_metal.mm in Sources */,
+				840B4EA127CFA05D00DCD69D /* imgui_impl_osx.mm in Sources */,
+				840B4E9927CFA04700DCD69D /* imgui_demo.cpp in Sources */,
+				848319F827CFA43F00157D32 /* MainUI.cpp in Sources */,
+				840B4E9527CFA04700DCD69D /* imgui_draw.cpp in Sources */,
+				840B4E9327CFA04700DCD69D /* imgui_widgets.cpp in Sources */,
+				840B4E9727CFA04700DCD69D /* imgui_tables.cpp in Sources */,
+				8309BDA8253CCC080045E2A1 /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8307E7EE20E9F9C900473790 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Tobias Grothmann";
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = de.tobiasgrothmann.otterUI;
+			};
+			name = Debug;
+		};
+		8307E7EF20E9F9C900473790 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Tobias Grothmann";
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.tobiasgrothmann.otterUI;
+			};
+			name = Release;
+		};
+		8307E7F420E9F9C900473790 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = /usr/local/include/Otter;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info-macOS.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "(c) Tobias Grothmann 2022";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				OTHER_LDFLAGS = "-lotter";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tobiasgrothmann.otterUI;
+				PRODUCT_NAME = OtterUI;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../**";
+			};
+			name = Debug;
+		};
+		8307E7F520E9F9C900473790 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				HEADER_SEARCH_PATHS = /usr/local/include/Otter;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info-macOS.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "(c) Tobias Grothmann 2022";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lotter";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tobiasgrothmann.otterUI;
+				PRODUCT_NAME = OtterUI;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8307E7B920E9F9C700473790 /* Build configuration list for PBXProject "OtterUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8307E7EE20E9F9C900473790 /* Debug */,
+				8307E7EF20E9F9C900473790 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8307E7F320E9F9C900473790 /* Build configuration list for PBXNativeTarget "OtterUI_macos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8307E7F420E9F9C900473790 /* Debug */,
+				8307E7F520E9F9C900473790 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8307E7B620E9F9C700473790 /* Project object */;
+}
