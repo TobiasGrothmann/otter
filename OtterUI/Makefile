@@ -2,10 +2,9 @@ CC := g++
 
 BUILD_DIR := ../build
 OTTER_LIB_DIR := $(BUILD_DIR)/otter
-
-BIN_DIR = ../build/otterUI
+BIN_DIR = $(BUILD_DIR)/otterUI
 EXE_NAME = otterUI
-EXE = $(BIN_DIR)/$(EXE_NAME)
+EXE = $(BUILD_DIR)/$(EXE_NAME)/$(EXE_NAME)
 IMGUI_DIR = imgui
 SOURCES = main_standalone.mm
 SOURCES += $(IMGUI_DIR)/imgui.cpp $(IMGUI_DIR)/imgui_demo.cpp $(IMGUI_DIR)/imgui_draw.cpp $(IMGUI_DIR)/imgui_tables.cpp $(IMGUI_DIR)/imgui_widgets.cpp
