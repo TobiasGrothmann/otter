@@ -8,7 +8,6 @@ namespace otter {
 class SocketServer
 {
 public:
-
     SocketServer(SharedState* sharedState);
 
     void runServer();
@@ -16,9 +15,7 @@ public:
     static std::string read(boost::asio::ip::tcp::socket* socket);
 
 private:
-
     SharedState* sharedState;
-
 };
 
 }

@@ -25,7 +25,6 @@ SocketServer::SocketServer(SharedState* sharedState)
 void SocketServer::runServer()
 {
     boost::asio::io_service io_service;
-
     tcp::acceptor acceptor(io_service, tcp::endpoint(tcp::v4(), 41414));
 
     while (!sharedState->abort)

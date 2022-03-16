@@ -26,7 +26,6 @@ enum Axis
 class OtterServer
 {
 public:
-
 	OtterServer(SharedState* sharedState);
 	~OtterServer();
 
@@ -78,7 +77,6 @@ public:
 	void travelToWithAccelleration(const Vec2& to);
 
 private:
-
 	bool isLeft(float ax, float ay, float bx, float by, float cx, float cy);
 
 	std::chrono::time_point<std::chrono::high_resolution_clock> lastStep[3];
@@ -89,7 +87,6 @@ private:
 	SharedState* sharedState;
 
 	// sounds
-
 	enum class Sound
 	{
 		Startup,
@@ -99,7 +96,6 @@ private:
 		Success,
 	};
 	void playSound(Sound sound);
-
 };
 
 }

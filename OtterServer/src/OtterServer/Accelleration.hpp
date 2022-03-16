@@ -139,7 +139,6 @@ public:
 private:
     float accellerationDist;
 public:
-
     std::vector<SpeedPoint> points = {};
 };
 

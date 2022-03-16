@@ -10,7 +10,6 @@ namespace otter {
 class ReceivedCommand
 {
 public:
-
     ReceivedCommand(std::shared_ptr<Command> command, tcp::socket* socket);
     ~ReceivedCommand();
 
