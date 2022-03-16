@@ -4,7 +4,7 @@ using namespace std;
 
 namespace otter {
 
-QuadTree::QuadTree(const Queue& queue, int capacity, bool oversampled)
+QuadTree::QuadTree(const Queue& queue, int capacity, bool oversampled, const SampleSettings& sampleSettings)
     : capacity(capacity)
 {
     this->bounds = make_shared<Rectangle>(queue.getBounds());
@@ -12,9 +12,9 @@ QuadTree::QuadTree(const Queue& queue, int capacity, bool oversampled)
     for (const shared_ptr<Plottable>& plottable : queue.items)
     {
         if (oversampled)
-            this->addOversampled(plottable);
+            this->addOversampled(plottable, sampleSettings);
         else
-            this->add(plottable);
+            this->add(plottable, sampleSettings);
     }
 }
 QuadTree::QuadTree(const Rectangle& bounds, int capacity)

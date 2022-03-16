@@ -50,12 +50,6 @@
             ReferencedContainer = "container:OtterUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "--path &quot;/Users/admin/Dropbox/Otter/projects/thicknessImage/queues/a5truchet.q&quot;"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

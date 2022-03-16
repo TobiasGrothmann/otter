@@ -12,7 +12,7 @@ class QuadTree
 {
 public:
     QuadTree() = default;
-    QuadTree(const Queue& queue, int capacity = 3, bool oversampled = false);
+    QuadTree(const Queue& queue, int capacity = 3, bool oversampled = false, const SampleSettings& sampleSettings = SampleSettings());
     QuadTree(const Rectangle& bounds, int capacity = 3);
     QuadTree(const std::shared_ptr<Rectangle>& bounds, int capacity = 3);
     
