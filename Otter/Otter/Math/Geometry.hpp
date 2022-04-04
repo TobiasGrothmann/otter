@@ -12,6 +12,7 @@ struct Intersection
     VINDEX_TYPE(Vec2) sectionIndex;
 };
 
+/// provides general geometry utility functions
 class Geometry {
 public:
     
@@ -41,7 +42,7 @@ public:
                                 const Vec2& lineEnd,
                                 const std::vector<Vec2>& segments);
     
-    static std::shared_ptr<Path> getSmoothCorners(const std::shared_ptr<Plottable> shape,
+    static std::shared_ptr<Path> getSmoothCorners(const std::shared_ptr<Plottable> plottable,
                                                   double factor,
                                                   int iterations = 10,
                                                   double minDistManhattan = 0.03);

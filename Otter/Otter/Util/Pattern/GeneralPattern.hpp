@@ -5,6 +5,7 @@
 
 namespace otter {
 
+/// parent class for the generation of patterns within given bounds
 class GeneralPattern
 {
 public:

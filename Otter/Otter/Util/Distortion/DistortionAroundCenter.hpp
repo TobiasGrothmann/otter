@@ -4,6 +4,7 @@
 
 namespace otter {
 
+/// disortion subclass for distortion by distance and angle around a center point
 class DistortionAroundCenter : public Distortion
 {
 public:

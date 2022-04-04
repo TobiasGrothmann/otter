@@ -5,6 +5,7 @@
 
 namespace otter {
 
+/// parent class for the generation of vertices within given bounds
 class GeneralPointDistribution
 {
 public:

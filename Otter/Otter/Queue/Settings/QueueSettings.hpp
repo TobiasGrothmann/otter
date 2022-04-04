@@ -5,6 +5,7 @@
 
 namespace otter {
 
+/// plotter settings for a queue;
 class QueueSettings : public Serializable
 {
 public:

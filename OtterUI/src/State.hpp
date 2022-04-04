@@ -18,7 +18,7 @@ struct State
     void updateStats()
     {
         // travel and paint
-        std::vector<double> paintAndTravelDist = queue->getPaintAndTravelDistance();
+        std::array<double, 2> paintAndTravelDist = queue->getPaintAndTravelDistance();
         paintDist = paintAndTravelDist[0];
         travelDist = paintAndTravelDist[1];
         

@@ -5,6 +5,14 @@
 
 namespace otter {
 
+/// Frame defines a rectangular outer area with another rectangular area within it.
+/// It's mostly a handy tool to define a paper size and a margin for the image that will be plotted within it.
+///
+/// e.g. for a paper of size A6 with a 1cm margin:
+/// \code{.cpp}
+/// Frame f = Frame(Vec2::a6, 1.0);
+/// RectanglePtr plotArea = f.getInnerRectangle();
+/// \endcode
 class Frame {
 public:
     Frame(const Vec2& bottomLeft, const Vec2& size, const Vec2& margin);

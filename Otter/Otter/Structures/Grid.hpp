@@ -5,6 +5,7 @@
 
 namespace otter {
 
+/// utility class to generate a grid of rectangles
 class Grid
 {
 public:

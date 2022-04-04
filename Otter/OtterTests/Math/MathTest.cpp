@@ -16,5 +16,7 @@ TEST_CASE("Math")
         CHECK(Math::distanceBetweenIntsMod(9, 0, 10) == 1);
         CHECK(Math::distanceBetweenIntsMod(9, 9, 10) == 0);
         CHECK(Math::distanceBetweenIntsMod(1, 4, 6) == 3);
+        CHECK(Math::distanceBetweenIntsMod(1, 11, 10) == 0);
+        CHECK(Math::distanceBetweenIntsMod(0, 19, 10) == 1);
     }
 }
