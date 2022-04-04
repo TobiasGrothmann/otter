@@ -7,6 +7,8 @@
 
 namespace otter {
 
+/// helper class for conversion from otter types to clipper types and reverse;
+/// clipper uses integer values while otter uses floating point, so values are being converted/scaled; CLIPPER_RESOLUTION is the amount of resolution used for that.
 class ClipperConvert
 {
 public:
