@@ -16,8 +16,6 @@ public:
     
     std::vector<Line> edges = {}; ///< edges between all cells and towards infinity (clipped ad clipBounds)
     std::vector<VoronoiCell> cells = {};
-    
-private:
     const std::vector<Vec2> points;
     const std::shared_ptr<Rectangle> clipBounds;
 };
