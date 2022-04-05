@@ -4,6 +4,9 @@ import sys
 from pathlib import Path
 import shutil
 
+# print to stderr
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 # SETUP
 class STYLE:
@@ -22,24 +25,24 @@ def style(msg, *styles):
 def styleError(msg):
 	return style(msg, STYLE.FAIL)
 def error(msg):
-	print(styleError("ERROR:"), msg)
+	eprint(styleError("ERROR:"), msg)
 def styleSuccess(msg):
 	return style(msg, STYLE.OKGREEN)
 def success(msg):
 	print(styleSuccess("DONE:"), msg)
 def abort():
-	exit()
+	exit(1)
 
 def printHelp():
-	print(style("usage:\totter [command] [args]\n", STYLE.FAIL, STYLE.BOLD))
+	eprint(style("usage:\totter [command] [args]\n", STYLE.FAIL, STYLE.BOLD))
 	# create
-	print(style("create <path>", STYLE.OKGREEN, STYLE.BOLD))
-	print("\tcreates a new otter project at " + style("<path>", STYLE.OKGREEN))
-	print(style("\totter create ~/OtterProjects/newProject\n", STYLE.OKCYAN))
+	eprint(style("create <path>", STYLE.OKGREEN, STYLE.BOLD))
+	eprint("\tcreates a new otter project at " + style("<path>", STYLE.OKGREEN))
+	eprint(style("\totter create ~/OtterProjects/newProject\n", STYLE.OKCYAN))
 	# reset
-	print(style("reset <path>", STYLE.OKGREEN, STYLE.BOLD))
-	print("\tresets the xcode project at " + style("<path>", STYLE.OKGREEN))
-	print(style("\totter reset ~/OtterProjects/newProject", STYLE.OKCYAN))
+	eprint(style("reset <path>", STYLE.OKGREEN, STYLE.BOLD))
+	eprint("\tresets the xcode project at " + style("<path>", STYLE.OKGREEN))
+	eprint(style("\totter reset ~/OtterProjects/newProject", STYLE.OKCYAN))
 
 
 # CHECK OTTER_HOME
@@ -63,12 +66,12 @@ if not home.is_dir():
 arguments = sys.argv[1:]
 if len(arguments) == 0:
 	printHelp()
-	exit()
+	abort()
 
 command = arguments[0]
 if (command.replace("-", "") in ("help", "h")):
 	printHelp()
-	exit()
+	abort()
 
 
 
