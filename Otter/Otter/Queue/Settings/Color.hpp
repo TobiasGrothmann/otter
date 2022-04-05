@@ -4,6 +4,7 @@
 
 namespace otter {
 
+/// general color defined by red, green, blue and alpha
 class Color : public Serializable
 {
 public:
@@ -16,6 +17,7 @@ public:
     double b = 0.0;
     double a = 1.0;
     
+    /// brightness is an average of r, g and b -> all multiplied by a
     double getBrightness() const;
     
 // serialize

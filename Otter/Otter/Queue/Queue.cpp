@@ -72,9 +72,12 @@ void Queue::add(const vector<shared_ptr<Plottable>>& newItems)
 
 void Queue::add(const Queue& otherQueue)
 {
-    items.insert(items.end(), otherQueue.items.begin(), otherQueue.items.end());
+    for (const shared_ptr<Plottable>& p : otherQueue.items)
+    {
+        this->add(p->copy());
+    }
 }
-   
+
 void Queue::addFront(shared_ptr<Plottable> item)
 {
     if (item)
@@ -206,7 +209,7 @@ void Queue::preview() const
     }
 }
 
-const vector<double> Queue::getPaintAndTravelDistance() const
+const array<double, 2> Queue::getPaintAndTravelDistance() const
 {
     Vec2 location = Vec2(0.0, 0.0);
     double paintDist = 0.0;

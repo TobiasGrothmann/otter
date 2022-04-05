@@ -5,6 +5,7 @@
 
 namespace otter {
 
+/// definition for the pen that is used to plot the queue
 class Pen : public Serializable
 {
 public:

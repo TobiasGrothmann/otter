@@ -71,7 +71,6 @@
 		84C7855D246D3B9D005779A9 /* SVG.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SVG.hpp; sourceTree = "<group>"; };
 		84F3DC8F26834BB300F7CE63 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
 		84F3DC9026834BB300F7CE63 /* clipper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = clipper.hpp; sourceTree = "<group>"; };
-		84F3DC9326834BBB00F7CE63 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		84F3DC9426834BD100F7CE63 /* Boolean.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Boolean.cpp; sourceTree = "<group>"; };
 		84F3DC9526834BD100F7CE63 /* Boolean.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Boolean.hpp; sourceTree = "<group>"; };
 		84F3DC9926834C1D00F7CE63 /* ClipperConvert.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClipperConvert.cpp; sourceTree = "<group>"; };
@@ -198,7 +197,6 @@
 			children = (
 				84F3DC8F26834BB300F7CE63 /* clipper.cpp */,
 				84F3DC9026834BB300F7CE63 /* clipper.hpp */,
-				84F3DC9326834BBB00F7CE63 /* License.txt */,
 			);
 			path = clipper;
 			sourceTree = "<group>";

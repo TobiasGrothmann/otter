@@ -5,6 +5,7 @@
 
 namespace otter {
 
+/// wrapper class for clipper's offset
 class Boolean
 {
 public:

@@ -40,8 +40,10 @@ bool Math::isNearly(double a, double b, double delta)
 
 int Math::distanceBetweenIntsMod(int a, int b, int mod)
 {
-    int minValue = min(a, b);
-    int maxValue = max(a, b);
+    int aMod = a % mod;
+    int bMod = b % mod;
+    int minValue = min(aMod, bMod);
+    int maxValue = max(aMod, bMod);
     int distValue = maxValue - minValue;
     int modValue = mod - maxValue + minValue;
     return min(distValue, modValue);

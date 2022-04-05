@@ -199,9 +199,9 @@ double Vec2::distanceManhattan(const Vec2& other) const
     return abs(other.x - this->x) + abs(other.y - this->y);
 }
 
-bool Vec2::isNearly(const Vec2& other) const
+bool Vec2::isNearly(const Vec2& other, double delta) const
 {
-    return distanceManhattan(other) < 0.0001;
+    return distanceManhattan(other) < delta;
 }
 
 bool Vec2::isLeftOfLine(const Line& line) const

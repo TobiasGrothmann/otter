@@ -3,6 +3,7 @@
 
 namespace otter {
 
+/// generates the vertices of a hex grid, additionally the center is also added to essentially create the vertices for a triangular grid
 class HexGridVertices : public GeneralPointDistribution
 {
 public:
