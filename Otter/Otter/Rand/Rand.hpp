@@ -24,6 +24,11 @@ public:
     /// @param max included max value
     static int randI(int min, int max);
     
+    /// get random value from normal distribution
+    /// @param mean mean value / center value
+    /// @param stdDeviation standart deviation
+    static double normalDistValue(double mean, double stdDeviation);
+    
     /// get random bool based on percentage
     static bool coin(double percentage = 0.5);
     /// get either -1.0 or 1.0 based on percentage

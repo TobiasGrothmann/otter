@@ -27,6 +27,14 @@ int Rand::randI(int min, int max)
     return (int) randF(min, max + 1);
 }
 
+double Rand::normalDistValue(double mean, double stdDeviation)
+{
+    std::random_device rd;
+    std::mt19937 e2(rd());
+    std::normal_distribution<> dist(mean, stdDeviation);
+    return dist(e2);
+}
+
 bool Rand::coin(double percentage)
 {
     return ((double) rand() / (double) (RAND_MAX)) < percentage;
