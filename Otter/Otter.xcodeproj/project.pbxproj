@@ -93,6 +93,8 @@
 		848C33D12440E0180007DE8E /* Serializable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 848C33CF2440E0180007DE8E /* Serializable.cpp */; };
 		848C33D22440E0180007DE8E /* Serializable.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 848C33D02440E0180007DE8E /* Serializable.hpp */; };
 		8497632A274ADF6E00A2BBAB /* MathTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84976329274ADF6E00A2BBAB /* MathTest.cpp */; };
+		849B7EE328D90DEA006ACF90 /* Blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849B7EE128D90DEA006ACF90 /* Blur.cpp */; };
+		849B7EE428D90DEA006ACF90 /* Blur.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 849B7EE228D90DEA006ACF90 /* Blur.hpp */; };
 		849D67B923E9FB9000DE9617 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849D67B723E9FB9000DE9617 /* Rectangle.cpp */; };
 		849D67BA23E9FB9000DE9617 /* Rectangle.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 849D67B823E9FB9000DE9617 /* Rectangle.hpp */; };
 		84A372242796F69B00EDE2DF /* GeneralPointDistribution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A372222796F69B00EDE2DF /* GeneralPointDistribution.cpp */; };
@@ -211,6 +213,8 @@
 		848C33CF2440E0180007DE8E /* Serializable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Serializable.cpp; sourceTree = "<group>"; };
 		848C33D02440E0180007DE8E /* Serializable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Serializable.hpp; sourceTree = "<group>"; };
 		84976329274ADF6E00A2BBAB /* MathTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MathTest.cpp; sourceTree = "<group>"; };
+		849B7EE128D90DEA006ACF90 /* Blur.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Blur.cpp; sourceTree = "<group>"; };
+		849B7EE228D90DEA006ACF90 /* Blur.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Blur.hpp; sourceTree = "<group>"; };
 		849D67B723E9FB9000DE9617 /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		849D67B823E9FB9000DE9617 /* Rectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
 		84A372222796F69B00EDE2DF /* GeneralPointDistribution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GeneralPointDistribution.cpp; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 		841AFFD023DE05D80015DF45 /* Otter */ = {
 			isa = PBXGroup;
 			children = (
+				849B7EDF28D90DD3006ACF90 /* Effects */,
 				847C6ED32796E91600A5881C /* Rand */,
 				847C6EAC2796E91600A5881C /* Math */,
 				8470272224044EA300E410EA /* Structures */,
@@ -524,6 +529,15 @@
 			path = Math;
 			sourceTree = "<group>";
 		};
+		849B7EDF28D90DD3006ACF90 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				849B7EE128D90DEA006ACF90 /* Blur.cpp */,
+				849B7EE228D90DEA006ACF90 /* Blur.hpp */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
 		84A372262796F6E600EDE2DF /* PointDistributions */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +582,7 @@
 				84A3722A2796F6F900EDE2DF /* HexGridVertices.hpp in Headers */,
 				847C6EF32796E91600A5881C /* ConcentricSquares.hpp in Headers */,
 				847C6F072796E91700A5881C /* SpiralLine.hpp in Headers */,
+				849B7EE428D90DEA006ACF90 /* Blur.hpp in Headers */,
 				84F83E1E27D5153B00A651FD /* SampleTriangle.hpp in Headers */,
 				847C6F092796E91700A5881C /* RandomDots.hpp in Headers */,
 				847C6F082796E91700A5881C /* ParallelGrid.hpp in Headers */,
@@ -726,6 +741,7 @@
 				84F83E2527D541C400A651FD /* Vec2i.cpp in Sources */,
 				847C6EEC2796E91600A5881C /* Math.cpp in Sources */,
 				847C6EEA2796E91600A5881C /* Geometry.cpp in Sources */,
+				849B7EE328D90DEA006ACF90 /* Blur.cpp in Sources */,
 				84E16BAA24462FD1002F41CA /* QueueSettings.cpp in Sources */,
 				841AFFE423DE072C0015DF45 /* Vec2.cpp in Sources */,
 				84C0272F26812259004CE6D7 /* Color.cpp in Sources */,
