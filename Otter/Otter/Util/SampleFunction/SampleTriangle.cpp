@@ -25,6 +25,10 @@ bool SampleTriangle::getIntersection(double targetValue, shared_ptr<Path>& outPa
         outPath->add(from->point + (to->point - from->point) * factor);
     }
     
+    // skip if points are the same (value edge is exactly on a vertex)
+    if (outPath->points[0] == outPath->points[1])
+        return false;
+    
     return true;
 }
 
