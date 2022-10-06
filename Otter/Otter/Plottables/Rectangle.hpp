@@ -47,6 +47,8 @@ public:
     double getWidth() const;
     double getAspectRatio() const;
     
+    Vec2 normalizePoint(const Vec2& point) const;
+    
     bool overlaps(const Rectangle& otherRect) const;
     bool isSquare() const;
     

@@ -59,6 +59,10 @@ double Rectangle::getAspectRatio() const
     return this->getWidth() / this->getHeight();
 }
 
+Vec2 Rectangle::normalizePoint(const Vec2& point) const
+{
+    return (point - bottomLeft) / getSize();
+}
 
 bool Rectangle::overlaps(const Rectangle& other) const
 {
