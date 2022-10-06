@@ -80,7 +80,20 @@ vector<Vec2> Geometry::getAllIntersections(const Vec2& lineStart,
                                       foundIntersection,
                                       true))
         {
-            intersections.push_back(foundIntersection);
+            bool alreadyFoundThisIntersection = false;
+            for (const Vec2& intersection : intersections)
+            {
+                if (intersection == foundIntersection)
+                {
+                    alreadyFoundThisIntersection = true;
+                    break;
+                }
+            }
+            
+            if (!alreadyFoundThisIntersection)
+            {
+                intersections.push_back(foundIntersection);
+            }
         }
     }
     return intersections;
