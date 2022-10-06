@@ -17,6 +17,8 @@ public:
     static std::shared_ptr<Path> create(const std::shared_ptr<Path>& other);
     static std::shared_ptr<Path> create(const std::vector<Vec2>& points);
     
+    static std::shared_ptr<Path> createPolygon(const Vec2& center, int corners, double radius, double rotation = 0.0);
+    
     
     void add(const Vec2& newPoint);
     void add(const std::vector<Vec2>& newPoints);

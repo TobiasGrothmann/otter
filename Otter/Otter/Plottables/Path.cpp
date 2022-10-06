@@ -38,6 +38,17 @@ shared_ptr<Path> Path::create(const vector<Vec2>& points)
     return make_shared<Path>(points);
 }
 
+shared_ptr<Path> Path::createPolygon(const Vec2& center, int corners, double radius, double rotation)
+{
+    shared_ptr<Path> path = make_shared<Path>();
+    for (int i = 0; i < corners; i++)
+    {
+        const double angle = rotation + i * (2*M_PI / corners);
+        path->add(center + Vec2::polar(angle, radius));
+    }
+    path->close();
+    return path;
+}
 
 
 
