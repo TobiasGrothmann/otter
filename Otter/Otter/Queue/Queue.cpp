@@ -418,23 +418,24 @@ void Queue::normalize(const Rectangle& targetBounds, bool moveToMid)
 void Queue::combinePlottables(const SampleSettings& sampleSettings)
 {
     size_t lastNumPaths = 0;
-    vector<shared_ptr<Path>> output = {};
-    output.reserve(items.size());
+    
+    vector<shared_ptr<Path>> pathsCombined = {};
+    pathsCombined.reserve(items.size());
+    
     vector<shared_ptr<Plottable>> closedPlottables = {};
     closedPlottables.reserve(items.size());
+    
     vector<shared_ptr<Path>> paths = {};
-    closedPlottables.reserve(items.size());
+    paths.reserve(items.size());
+    
     for (const shared_ptr<Plottable>& plottable : items)
     {
         if (plottable->getIsClosed())
-        {
             closedPlottables.push_back(plottable);
-        }
         else
-        {
             paths.push_back(Path::create(plottable->getPlottablePoints(sampleSettings)));
-        }
     }
+    
     int tries = 0;
     while (paths.size() != lastNumPaths)
     {
@@ -445,7 +446,7 @@ void Queue::combinePlottables(const SampleSettings& sampleSettings)
         }
         lastNumPaths = paths.size();
         
-        output.clear();
+        pathsCombined.clear();
         
         const double distThresh = 0.0001;
         for (const shared_ptr<Path>& path : paths)
@@ -455,7 +456,7 @@ void Queue::combinePlottables(const SampleSettings& sampleSettings)
             
             bool foundConnection = false;
 
-            for (const shared_ptr<Path>& combinedPath : output)
+            for (const shared_ptr<Path>& combinedPath : pathsCombined)
             {
                 const Vec2& firstPointCombined = combinedPath->points[0];
                 const Vec2& lastPointCombined = combinedPath->points[combinedPath->points.size() - 1];
@@ -488,16 +489,18 @@ void Queue::combinePlottables(const SampleSettings& sampleSettings)
             
             if (!foundConnection)
             {
-                output.push_back(path);
+                pathsCombined.push_back(path);
             }
         }
         
-        paths = output;
+        paths = pathsCombined;
     }
     
     
     items.clear();
-    items.insert(items.end(), closedPlottables.begin(), closedPlottables.end());
+    items.reserve(paths.size() + closedPlottables.size());
+    
+    items.insert(items.begin(), closedPlottables.begin(), closedPlottables.end());
     items.insert(items.begin(), paths.begin(), paths.end());
 }
 
