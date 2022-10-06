@@ -9,7 +9,9 @@ namespace otter {
 Queue Filling::getSimpleFilling(const shared_ptr<Plottable>& shape, double lineDist)
 {
     Queue outQueue = Queue();
-    const Rectangle bounds = shape->getBounds();
+    Rectangle bounds = shape->getBounds();
+    bounds.bottomLeft -= 0.1;
+    bounds.topRight += 0.1;
     
     if (!shape->getIsClosed())
         cout << "WARNING: getting simple filling for non closed Plottable";
