@@ -17,8 +17,8 @@ Queue HexGrid::create(const shared_ptr<Rectangle>& bounds) const
     
     const double factor = sqrt(3.0);
     
-    shared_ptr<Rectangle> usedBounds = Rectangle::create(bounds->getBottomLeft() - (lineDist * 2),
-                                                bounds->getTopRight() + (lineDist * 2));
+    shared_ptr<Rectangle> usedBounds = Rectangle::create(bounds->getBottomLeft() - (lineDist * 4),
+                                                bounds->getTopRight() + (lineDist * 4));
     
     Vec2 pos = usedBounds->getBottomLeft();
     int yIndex = 0;
