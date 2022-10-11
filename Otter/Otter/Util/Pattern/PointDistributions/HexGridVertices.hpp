@@ -12,8 +12,13 @@ public:
     
     virtual std::vector<Vec2> create(const std::shared_ptr<Rectangle>& bounds) const override;
     
+    std::pair<std::vector<Vec2>, std::vector<Vec2>> createPointsAndCenters(const std::shared_ptr<Rectangle>& bounds) const;
+    
     double lineDist;
     bool includeCenter;
+    
+private:
+    VINDEX_TYPE(Vec2) getAproximateNumPointsForArea(const std::shared_ptr<Rectangle>& bounds) const;
 };
 
 }
