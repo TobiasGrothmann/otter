@@ -10,5 +10,4 @@ class OtterSketch
 public:
     
     otter::Queue create();
-    
 };

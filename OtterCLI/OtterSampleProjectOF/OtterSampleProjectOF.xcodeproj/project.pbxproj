@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		840C594D2932554700C8C78E /* OtterSketch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C594B2932554700C8C78E /* OtterSketch.cpp */; };
+		840C59502932889200C8C78E /* QueueDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C594E2932889200C8C78E /* QueueDrawer.cpp */; };
+		840C595329328E8800C8C78E /* ScaleHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C595229328E8800C8C78E /* ScaleHandler.cpp */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 /* End PBXBuildFile section */
@@ -27,6 +29,10 @@
 /* Begin PBXFileReference section */
 		840C594B2932554700C8C78E /* OtterSketch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OtterSketch.cpp; sourceTree = "<group>"; };
 		840C594C2932554700C8C78E /* OtterSketch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OtterSketch.hpp; sourceTree = "<group>"; };
+		840C594E2932889200C8C78E /* QueueDrawer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QueueDrawer.cpp; sourceTree = "<group>"; };
+		840C594F2932889200C8C78E /* QueueDrawer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QueueDrawer.hpp; sourceTree = "<group>"; };
+		840C595129328E8800C8C78E /* ScaleHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ScaleHandler.hpp; sourceTree = "<group>"; };
+		840C595229328E8800C8C78E /* ScaleHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScaleHandler.cpp; sourceTree = "<group>"; };
 		E42962AC2163EDD300A6A9E2 /* ofCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCamera.cpp; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/3d/ofCamera.cpp; sourceTree = SOURCE_ROOT; };
 		E42962AD2163EDD300A6A9E2 /* ofMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMesh.h; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/3d/ofMesh.h; sourceTree = SOURCE_ROOT; };
 		E42962AE2163EDD300A6A9E2 /* ofNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNode.h; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/3d/ofNode.h; sourceTree = SOURCE_ROOT; };
@@ -546,6 +552,10 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				840C594E2932889200C8C78E /* QueueDrawer.cpp */,
+				840C594F2932889200C8C78E /* QueueDrawer.hpp */,
+				840C595229328E8800C8C78E /* ScaleHandler.cpp */,
+				840C595129328E8800C8C78E /* ScaleHandler.hpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -650,7 +660,9 @@
 			files = (
 				840C594D2932554700C8C78E /* OtterSketch.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				840C59502932889200C8C78E /* QueueDrawer.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				840C595329328E8800C8C78E /* ScaleHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 
 #include "OtterSketch.hpp"
+#include "QueueDrawer.hpp"
 
 #include "Otter.hpp"
 
@@ -28,4 +29,6 @@ public:
     
     OtterSketch sketch;
     otter::Queue currentQueue;
+    
+    QueueDrawer queueDrawer;
 };

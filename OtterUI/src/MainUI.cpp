@@ -2,7 +2,7 @@
 #include <iomanip>
 
 #define GRAY(VAL) GetColorU32(ImVec4(VAL, VAL, VAL, 1.0f))
-#define GRID_COL(VAL) GetColorU32(ImVec4(VAL * 0.8f, VAL, VAL * 0.8f, 0.6f))
+#define GRID_COL(VAL) GetColorU32(ImVec4((VAL) * 0.8f, VAL, (VAL) * 0.8f, 0.6f))
 #define COLOR(R, G, B) GetColorU32(ImVec4(R, G, B, 1.0f))
 #define COLOR_A(R, G, B, A) GetColorU32(ImVec4(R, G, B, A))
 #define COLOR_HSV(H, S, V) GetColorU32((ImVec4)ImColor::HSV(H, S, V))

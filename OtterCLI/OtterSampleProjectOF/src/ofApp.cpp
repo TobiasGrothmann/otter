@@ -1,5 +1,7 @@
 #include "ofApp.h"
 
+#include "QueueDrawer.hpp"
+
 using namespace otter;
 using namespace std;
 
@@ -8,25 +10,26 @@ using namespace std;
 void ofApp::setup()
 {
     this->sketch = OtterSketch();
-    Queue currentQueue = this->sketch.create();
+    this->currentQueue = this->sketch.create();
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 {
-
+    ofVec2f a;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-
+    queueDrawer.draw(currentQueue);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key)
 {
-    this->sketch.create();
+    if (key == ' ')
+        this->currentQueue = this->sketch.create();
 }
 
 //--------------------------------------------------------------
