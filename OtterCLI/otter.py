@@ -36,7 +36,7 @@ def abort():
 def printHelp():
 	eprint(style("usage:\totter [command] [args]\n", STYLE.FAIL, STYLE.BOLD))
 	# create
-	eprint(style("create <path>", STYLE.OKGREEN, STYLE.BOLD))
+	eprint(style("create <path> [-of]", STYLE.OKGREEN, STYLE.BOLD))
 	eprint("\tcreates a new otter project at " + style("<path>", STYLE.OKGREEN))
 	eprint(style("\totter create ~/OtterProjects/newProject\n", STYLE.OKCYAN))
 	# reset
@@ -48,31 +48,42 @@ def printHelp():
 # CHECK OTTER_HOME
 OTTER_HOME = os.getenv('OTTER_HOME')
 SAMPLE_PROJECT_NAME = "OtterSampleProject"
+SAMPLE_PROJECT_OF_NAME = "OtterSampleProjectOF"
 def getOtterSampleProjectPath():
 	return home / "OtterCLI" / SAMPLE_PROJECT_NAME
+def getOtterSampleProjectOFPath():
+	return home / "OtterCLI" / SAMPLE_PROJECT_OF_NAME
 def getOtterSampleProjectXcodePath():
 	return home / "OtterCLI" / SAMPLE_PROJECT_NAME / (SAMPLE_PROJECT_NAME+".xcodeproj")
+def getOtterSampleProjectXcodePath():
+	return home / "OtterCLI" / SAMPLE_PROJECT_OF_NAME / (SAMPLE_PROJECT_OF_NAME+".xcodeproj")
 
 if not OTTER_HOME:
 	error("OTTER_HOME is not set. Something went wrong with your installation.")
 	abort()
 home = Path(OTTER_HOME)
+if not home.exists():
+	error(f"OTTER_HOME is set to '{home}' which does not exist.")
+	abort()
 if not home.is_dir():
-	error(f"OTTER_HOME is set to '{home}' which is not a directory")
+	error(f"OTTER_HOME is set to '{home}' which is not a directory.")
 	abort()
 
 
 # PARSE ARGUMENTS
-arguments = sys.argv[1:]
-if len(arguments) == 0:
+allArguments = sys.argv[1:]
+if len(allArguments) == 0:
 	printHelp()
 	abort()
 
-command = arguments[0]
-if (command.replace("-", "") in ("help", "h")):
+nonFlags = list(filter(lambda argument: argument[0] != '-', allArguments))
+if len(nonFlags) == 0:
 	printHelp()
 	abort()
 
+flags = list(filter(lambda argument: argument[0] == '-', allArguments))
+command = nonFlags[0]
+arguments = nonFlags[1:]
 
 
 # RENAMING
@@ -92,9 +103,9 @@ class Action():
 		self.valid = False
 
 class Create(Action):
-	def __init__(self, arguments):
+	def __init__(self, arguments, flags):
 		super().__init__()
-		if (len(arguments) != 1):
+		if (len(arguments) < 1):
 			error("Create requires argument: " + styleError("<path>"))
 			return
 		self.targetPath = Path(arguments[0])
@@ -109,10 +120,18 @@ class Create(Action):
 		if not self.parentDir.is_dir():
 			error(f"Parent directory '{styleError(self.parentDir)}' does not exist.")
 			return
-		self.sampleProject = getOtterSampleProjectPath()
-		if not self.sampleProject.is_dir():
-			error(f"OtterSampleProject could not be found at: '{getOtterSampleProjectPath()}'")
-			return
+		if '-of' in flags:
+			self.sampleProjectName = SAMPLE_PROJECT_OF_NAME
+			self.sampleProject = getOtterSampleProjectOFPath()
+			if not self.sampleProject.is_dir():
+				error(f"OtterSampleOFProject could not be found at: '{getOtterSampleProjectOFPath()}'")
+				return
+		else:
+			self.sampleProjectName = SAMPLE_PROJECT_NAME
+			self.sampleProject = getOtterSampleProjectPath()
+			if not self.sampleProject.is_dir():
+				error(f"OtterSampleProject could not be found at: '{getOtterSampleProjectPath()}'")
+				return
 		self.valid = True
 
 	def run(self):
@@ -130,14 +149,17 @@ class Create(Action):
 		for root, subdirs, files in os.walk(self.targetPath):
 			for file in files:
 				filePath = os.path.join(root, file)
-				replaceFileContents(filePath, SAMPLE_PROJECT_NAME, self.projectName)
+				try:
+					replaceFileContents(filePath, self.sampleProjectName, self.projectName)
+				except:
+					pass
 
 		# rename directories
 		dirsToRename = []
 		for root, subdirs, files in os.walk(self.targetPath):
 			for subdir in subdirs:
-				if SAMPLE_PROJECT_NAME in subdir:
-					newDirName = subdir.replace(SAMPLE_PROJECT_NAME, self.projectName)
+				if self.sampleProjectName in subdir:
+					newDirName = subdir.replace(self.sampleProjectName, self.projectName)
 					dirsToRename.append((os.path.join(root, subdir), os.path.join(root, newDirName)))
 		for renameDir in dirsToRename:
 			os.rename(renameDir[0], renameDir[1])
@@ -145,8 +167,8 @@ class Create(Action):
 		# rename files
 		for root, subdirs, files in os.walk(self.targetPath):
 			for file in files:
-				if SAMPLE_PROJECT_NAME in file:
-					newFileName = file.replace(SAMPLE_PROJECT_NAME, self.projectName)
+				if self.sampleProjectName in file:
+					newFileName = file.replace(self.sampleProjectName, self.projectName)
 					os.rename(os.path.join(root, file), os.path.join(root, newFileName))
 
 		# create git repo
@@ -158,7 +180,7 @@ class Create(Action):
 		return True
 
 class Reset(Action):
-	def __init__(self, arguments):
+	def __init__(self, arguments, flags):
 		super().__init__()
 		if (len(arguments) != 1):
 			error("Reset requires argument: " + styleError("<path>"))
@@ -211,9 +233,9 @@ class Reset(Action):
 
 # MAIN
 if command == "create":
-	action = Create(arguments[1:])
+	action = Create(arguments, flags)
 elif command == "reset":
-	action = Reset(arguments[1:])
+	action = Reset(arguments, flags)
 else:
 	error("command " + styleError(command) + " not understood")
 	abort()
