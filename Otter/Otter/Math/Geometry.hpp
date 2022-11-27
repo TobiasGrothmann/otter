@@ -58,9 +58,20 @@ public:
     
     static std::vector<Vec2> findConvexHull(std::vector<Vec2> points);
     
-    static bool getCircleFromPoints(const Vec2& a, const Vec2& b, const Vec2& c, Vec2& center, double& radius);
+    static bool getCircleFromPoints(const Vec2& a,
+                                    const Vec2& b,
+                                    const Vec2& c,
+                                    Vec2& outCenter,
+                                    double& outRadius);
     
     static Vec2 getAverageOfPoints(const std::vector<Vec2>& points);
+    
+    static bool circleCircleIntersections(const Vec2& centerA,
+                                          double radiusA,
+                                          const Vec2& centerB,
+                                          double radiusB,
+                                          Vec2& outIntersectionA,
+                                          Vec2& outIntersectionB);
 };
 
 }

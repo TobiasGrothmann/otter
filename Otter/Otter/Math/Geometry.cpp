@@ -343,4 +343,36 @@ Vec2 Geometry::getAverageOfPoints(const vector<Vec2>& points)
     return average;
 }
 
+// source: Paul Bourke / Tim Voght: http://paulbourke.net/geometry/circlesphere/
+// code: http://paulbourke.net/geometry/circlesphere/tvoght.c
+bool Geometry::circleCircleIntersections(const Vec2& centerA, double radiusA, const Vec2& centerB, double radiusB, Vec2& intersectionA, Vec2& intersectionB)
+{
+    double a, distX, distY, dist, h, rx, ry;
+    double x2, y2;
+
+    distX = centerB.x - centerA.x;
+    distY = centerB.y - centerA.y;
+
+    dist = hypot(distX, distY);
+
+    if (dist > (radiusA + radiusB))
+        return false; // circles do not intersect
+    if (dist < fabs(radiusA - radiusB))
+        return false; // one circle is contained in the other
+
+    a = ((radiusA * radiusA) - (radiusB * radiusB) + (dist * dist)) / (2.0 * dist);
+
+    x2 = centerA.x + (distX * a / dist);
+    y2 = centerA.y + (distY * a / dist);
+
+    h = sqrt((radiusA * radiusA) - (a * a));
+
+    rx = -distY * (h / dist);
+    ry = distX * (h / dist);
+
+    intersectionA = Vec2(x2 + rx, y2 + ry);
+    intersectionB = Vec2(x2 - rx, y2 - ry);
+    return true;
+}
+
 }
