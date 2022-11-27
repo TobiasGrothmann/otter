@@ -11,5 +11,10 @@ class Sketch
 {
 public:
     
+    void setup();
     otter::Queue create(const QueueState& state);
+    
+    bool updateEveryFrame = false;
+    bool updateOnMouseMove = false;
+    bool updateOnMouseClick = false;
 };
