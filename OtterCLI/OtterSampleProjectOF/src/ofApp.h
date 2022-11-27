@@ -30,6 +30,6 @@ public:
     Sketch sketch;
     void createQueue();
     
-    QueueState queueState;
+    State state;
     QueueDrawer queueDrawer;
 };

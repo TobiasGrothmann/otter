@@ -17,6 +17,7 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
+    state.update();
     if (sketch.updateEveryFrame)
         createQueue();
 }
@@ -24,7 +25,8 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-    queueDrawer.draw(queueState);
+    state.update();
+    queueDrawer.draw(state);
 }
 
 //--------------------------------------------------------------
@@ -43,7 +45,7 @@ void ofApp::keyReleased(int key)
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y)
 {
-    queueState.SetMousePos(Vec2(x, y));
+    state.SetMousePos(Vec2(x, y));
     if (sketch.updateOnMouseMove)
         createQueue();
 }
@@ -51,7 +53,7 @@ void ofApp::mouseMoved(int x, int y)
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button)
 {
-    queueState.SetMouseClick(Vec2(x, y));
+    state.SetMouseClick(Vec2(x, y));
     if (sketch.updateOnMouseClick)
         createQueue();
 }
@@ -59,7 +61,7 @@ void ofApp::mouseDragged(int x, int y, int button)
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {
-    queueState.SetMouseClick(Vec2(x, y));
+    state.SetMouseClick(Vec2(x, y));
     if (sketch.updateOnMouseClick)
         createQueue();
 }
@@ -67,7 +69,7 @@ void ofApp::mousePressed(int x, int y, int button)
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button)
 {
-    queueState.SetMouseClick(Vec2(x, y));
+    state.SetMouseClick(Vec2(x, y));
     if (sketch.updateOnMouseClick)
         createQueue();
 }
@@ -75,7 +77,7 @@ void ofApp::mouseReleased(int x, int y, int button)
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y)
 {
-    queueState.SetMousePos(Vec2(x, y));
+    state.SetMousePos(Vec2(x, y));
     if (sketch.updateOnMouseMove)
         createQueue();
 }
@@ -90,7 +92,7 @@ void ofApp::mouseExited(int x, int y)
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h)
 {
-    queueState.recomputeScale();
+    state.recomputeScale();
 }
 
 //--------------------------------------------------------------
@@ -108,5 +110,5 @@ void ofApp::dragEvent(ofDragInfo dragInfo)
 
 void ofApp::createQueue()
 {
-    this->queueState.setQueue(this->sketch.create(queueState));
+    this->state.setQueue(this->sketch.create(state));
 }

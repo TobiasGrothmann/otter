@@ -1,4 +1,4 @@
-#include "QueueState.hpp"
+#include "State.hpp"
 
 #include "ofMain.h"
 
@@ -6,7 +6,7 @@ using namespace otter;
 using namespace std;
 
 
-void QueueState::setQueue(const Queue& newQueue)
+void State::setQueue(const Queue& newQueue)
 {
     this->queue = Queue(newQueue);
     
@@ -18,9 +18,10 @@ void QueueState::setQueue(const Queue& newQueue)
     displayedBounds.topRight += margin;
     
     recomputeScale();
+    iteration++;
 }
 
-void QueueState::recomputeScale()
+void State::recomputeScale()
 {
     const ofVec2f ofWindowSize = ofGetWindowSize();
     windowTopLeft_screenSpace = Vec2(0, 0);
@@ -31,12 +32,17 @@ void QueueState::recomputeScale()
                           displayedBounds);
 }
 
-void QueueState::SetMousePos(const Vec2& mousePos_screenSpace)
+void State::SetMousePos(const Vec2& mousePos_screenSpace)
 {
     mousePos_otterSpace = scaleHandler.scaleReverse(mousePos_screenSpace);
 }
 
-void QueueState::SetMouseClick(const otter::Vec2& mouseClick_screenSpace)
+void State::SetMouseClick(const otter::Vec2& mouseClick_screenSpace)
 {
     mouseClick_otterSpace = scaleHandler.scaleReverse(mouseClick_screenSpace);
+}
+
+void State::update()
+{
+    time = ofGetElapsedTimef();
 }

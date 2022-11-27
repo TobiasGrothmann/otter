@@ -4,7 +4,7 @@
 
 #include "Otter.hpp"
 
-#include "QueueState.hpp"
+#include "State.hpp"
 
 
 class Sketch
@@ -12,7 +12,7 @@ class Sketch
 public:
     
     void setup();
-    otter::Queue create(const QueueState& state);
+    otter::Queue create(const State& state);
     
     bool updateEveryFrame = false;
     bool updateOnMouseMove = false;

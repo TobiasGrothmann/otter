@@ -5,14 +5,14 @@ using namespace otter;
 using namespace std;
 
 
-void QueueDrawer::draw(const QueueState& queueState)
+void QueueDrawer::draw(const State& queueState)
 {
     ofClear(255, 255, 255);
     drawGrid(queueState);
     drawQueue(queueState);
 }
 
-void QueueDrawer::drawGrid(const QueueState& queueState)
+void QueueDrawer::drawGrid(const State& queueState)
 {
     const Vec2 minOtterSpace = queueState.scaleHandler.scaleReverse(Vec2(queueState.windowTopLeft_screenSpace) +
                                                                     queueState.windowSize_screenSpace.onlyY());
@@ -48,7 +48,7 @@ void QueueDrawer::drawGrid(const QueueState& queueState)
                queueState.scaleHandler.scale(Vec2(maxOtterSpace.x, 0)));
 }
 
-void QueueDrawer::drawQueue(const QueueState& queueState)
+void QueueDrawer::drawQueue(const State& queueState)
 {
     ofSetColor(0, 0, 0);
     

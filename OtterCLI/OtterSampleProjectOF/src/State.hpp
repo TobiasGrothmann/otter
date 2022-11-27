@@ -7,7 +7,7 @@
 #include "Otter.hpp"
 
 
-class QueueState
+class State
 {
 public:
     
@@ -15,6 +15,7 @@ public:
     otter::Queue queue;
     otter::Rectangle queueBounds;
     otter::Rectangle displayedBounds;
+    int iteration = 0;
     
     void recomputeScale();
     ScaleHandler scaleHandler;
@@ -26,4 +27,7 @@ public:
     
     void SetMouseClick(const otter::Vec2& mouseClick_screenSpace);
     otter::Vec2 mouseClick_otterSpace = otter::Vec2(0, 0);
+    
+    void update();
+    double time = 0.0;
 };

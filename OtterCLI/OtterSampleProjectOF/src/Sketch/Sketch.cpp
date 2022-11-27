@@ -8,7 +8,7 @@ void Sketch::setup()
 {
 }
 
-Queue Sketch::create(const QueueState& state)
+Queue Sketch::create(const State& state)
 {
     Queue q = Queue();
     
