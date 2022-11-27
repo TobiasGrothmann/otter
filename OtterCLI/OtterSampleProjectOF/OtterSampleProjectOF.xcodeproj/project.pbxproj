@@ -34,8 +34,8 @@
 		840C594F2932889200C8C78E /* QueueDrawer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QueueDrawer.hpp; sourceTree = "<group>"; };
 		840C595129328E8800C8C78E /* ScaleHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ScaleHandler.hpp; sourceTree = "<group>"; };
 		840C595229328E8800C8C78E /* ScaleHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScaleHandler.cpp; sourceTree = "<group>"; };
-		840C5954293382FA00C8C78E /* State.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = State.cpp; path = src/State.cpp; sourceTree = SOURCE_ROOT; };
-		840C5955293382FA00C8C78E /* State.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = State.hpp; path = src/State.hpp; sourceTree = SOURCE_ROOT; };
+		840C5954293382FA00C8C78E /* State.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = State.cpp; path = src/of/State.cpp; sourceTree = SOURCE_ROOT; };
+		840C5955293382FA00C8C78E /* State.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = State.hpp; path = src/of/State.hpp; sourceTree = SOURCE_ROOT; };
 		E42962AC2163EDD300A6A9E2 /* ofCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCamera.cpp; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/3d/ofCamera.cpp; sourceTree = SOURCE_ROOT; };
 		E42962AD2163EDD300A6A9E2 /* ofMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMesh.h; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/3d/ofMesh.h; sourceTree = SOURCE_ROOT; };
 		E42962AE2163EDD300A6A9E2 /* ofNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNode.h; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/3d/ofNode.h; sourceTree = SOURCE_ROOT; };
@@ -212,9 +212,9 @@
 		E42963722163EDD300A6A9E2 /* ofSoundBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundBuffer.cpp; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/sound/ofSoundBuffer.cpp; sourceTree = SOURCE_ROOT; };
 		E42963732163EDD300A6A9E2 /* ofSoundBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundBaseTypes.h; path = ../../../../../../Applications/of_v0.11.2_osx_release/libs/openFrameworks/sound/ofSoundBaseTypes.h; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* OtterSampleProjectOFDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtterSampleProjectOFDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/of/main.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/of/ofApp.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/of/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,13 +237,29 @@
 			name = local_addons;
 			sourceTree = "<group>";
 		};
-		840C594A2932553600C8C78E /* Sketch */ = {
+		840C594A2932553600C8C78E /* sketch */ = {
 			isa = PBXGroup;
 			children = (
 				840C594B2932554700C8C78E /* Sketch.cpp */,
 				840C594C2932554700C8C78E /* Sketch.hpp */,
 			);
-			path = Sketch;
+			path = sketch;
+			sourceTree = "<group>";
+		};
+		847A410D2933BC100093B271 /* of */ = {
+			isa = PBXGroup;
+			children = (
+				840C5954293382FA00C8C78E /* State.cpp */,
+				840C5955293382FA00C8C78E /* State.hpp */,
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
+				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				840C594E2932889200C8C78E /* QueueDrawer.cpp */,
+				840C594F2932889200C8C78E /* QueueDrawer.hpp */,
+				840C595229328E8800C8C78E /* ScaleHandler.cpp */,
+				840C595129328E8800C8C78E /* ScaleHandler.hpp */,
+			);
+			path = of;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -551,16 +567,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				840C5954293382FA00C8C78E /* State.cpp */,
-				840C5955293382FA00C8C78E /* State.hpp */,
-				840C594A2932553600C8C78E /* Sketch */,
-				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
-				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				840C594E2932889200C8C78E /* QueueDrawer.cpp */,
-				840C594F2932889200C8C78E /* QueueDrawer.hpp */,
-				840C595229328E8800C8C78E /* ScaleHandler.cpp */,
-				840C595129328E8800C8C78E /* ScaleHandler.hpp */,
+				847A410D2933BC100093B271 /* of */,
+				840C594A2932553600C8C78E /* sketch */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
