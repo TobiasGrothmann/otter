@@ -4,7 +4,7 @@ using namespace otter;
 using namespace std;
 
 
-Queue OtterSketch::create()
+Queue OtterSketch::create(const QueueState& state)
 {
     Queue q = Queue();
     

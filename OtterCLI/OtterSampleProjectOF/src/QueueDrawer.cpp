@@ -5,27 +5,19 @@ using namespace otter;
 using namespace std;
 
 
-void QueueDrawer::draw(const Queue& q)
+void QueueDrawer::draw(const QueueState& queueState)
 {
-    const ofVec2f ofWindowSize = ofGetWindowSize();
-    const Vec2 topLeft = Vec2(0, 0);
-    const Vec2 windowSize = Vec2(ofWindowSize.x, ofWindowSize.y);
-    
-    // TODO: compute state only once
-    Rectangle drawingBounds = q.getBounds();
-    drawingBounds.scaleAt(drawingBounds.getCenter(), 1.05);
-    
-    scaleHandler.setScale(windowSize, topLeft, drawingBounds);
-    
     ofClear(255, 255, 255);
-    drawGrid(q, topLeft, windowSize);
-    drawQueue(q);
+    drawGrid(queueState);
+    drawQueue(queueState);
 }
 
-void QueueDrawer::drawGrid(const Queue& q, const Vec2 topLeft, const Vec2& windowSize)
+void QueueDrawer::drawGrid(const QueueState& queueState)
 {
-    const Vec2 minOtterSpace = scaleHandler.scaleReverse(Vec2(topLeft) + Vec2(0.0, windowSize.y));
-    const Vec2 maxOtterSpace = scaleHandler.scaleReverse(Vec2(topLeft) + Vec2(windowSize.x, 0.0));
+    const Vec2 minOtterSpace = queueState.scaleHandler.scaleReverse(Vec2(queueState.windowTopLeft_screenSpace) +
+                                                                    queueState.windowSize_screenSpace.onlyY());
+    const Vec2 maxOtterSpace = queueState.scaleHandler.scaleReverse(Vec2(queueState.windowTopLeft_screenSpace) +
+                                                                    queueState.windowSize_screenSpace.onlyX());
     
     const float step = 1.0f;
     const int highlightStep = 10;
@@ -36,8 +28,8 @@ void QueueDrawer::drawGrid(const Queue& q, const Vec2 topLeft, const Vec2& windo
         x += step;
         const int xInt = (int)std::round(x);
         ofSetColor(xInt % highlightStep != 0 ? colorGrid : colorGridHighlight);
-        ofDrawLine(scaleHandler.scale(Vec2(x, minOtterSpace.y)),
-                   scaleHandler.scale(Vec2(x, maxOtterSpace.y)));
+        ofDrawLine(queueState.scaleHandler.scale(Vec2(x, minOtterSpace.y)),
+                   queueState.scaleHandler.scale(Vec2(x, maxOtterSpace.y)));
     }
     double y = floor(minOtterSpace.y);
     while (y <= maxOtterSpace.y)
@@ -45,33 +37,33 @@ void QueueDrawer::drawGrid(const Queue& q, const Vec2 topLeft, const Vec2& windo
         y += step;
         const int yInt = (int)std::round(y);
         ofSetColor(yInt % highlightStep != 0 ? colorGrid : colorGridHighlight);
-        ofDrawLine(scaleHandler.scale(Vec2(minOtterSpace.x, y)),
-                   scaleHandler.scale(Vec2(maxOtterSpace.x, y)));
+        ofDrawLine(queueState.scaleHandler.scale(Vec2(minOtterSpace.x, y)),
+                   queueState.scaleHandler.scale(Vec2(maxOtterSpace.x, y)));
     }
     
     ofSetColor(colorGridZero);
-    ofDrawLine(scaleHandler.scale(Vec2(0, minOtterSpace.y)),
-               scaleHandler.scale(Vec2(0, maxOtterSpace.y)));
-    ofDrawLine(scaleHandler.scale(Vec2(minOtterSpace.x, 0)),
-               scaleHandler.scale(Vec2(maxOtterSpace.x, 0)));
+    ofDrawLine(queueState.scaleHandler.scale(Vec2(0, minOtterSpace.y)),
+               queueState.scaleHandler.scale(Vec2(0, maxOtterSpace.y)));
+    ofDrawLine(queueState.scaleHandler.scale(Vec2(minOtterSpace.x, 0)),
+               queueState.scaleHandler.scale(Vec2(maxOtterSpace.x, 0)));
 }
 
-void QueueDrawer::drawQueue(const Queue& q)
+void QueueDrawer::drawQueue(const QueueState& queueState)
 {
     ofSetColor(0, 0, 0);
     
-    for (const PlottablePtr& plottable : q.items)
+    for (const PlottablePtr& plottable : queueState.queue.items)
     {
         const vector<Vec2> points = plottable->getPlottablePoints(SampleSettings(30.0));
         
         ofPolyline poly = ofPolyline();
         for (const Vec2& point : points)
         {
-            ofVec2f pointScaled = scaleHandler.scale(point);
+            ofVec2f pointScaled = queueState.scaleHandler.scale(point);
             poly.addVertex(pointScaled.x, pointScaled.y, 0.0);
         }
         
-        //poly.getSmoothed(1).draw();
+//        poly.getSmoothed(10).draw();
         poly.draw();
     }
 }

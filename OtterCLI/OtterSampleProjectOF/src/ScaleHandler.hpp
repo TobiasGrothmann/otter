@@ -22,7 +22,7 @@ public:
     ofVec2f scale(const otter::Vec2& otterPoint) const;
     double scale(double distance) const;
     
-    // scale from scren space to otter space
+    // scale from screen space to otter space
     otter::Vec2 scaleReverse(const otter::Vec2& screenPoint) const;
     double scaleReverse(double distance) const;
     

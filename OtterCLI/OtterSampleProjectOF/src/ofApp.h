@@ -28,7 +28,8 @@ public:
     void gotMessage(ofMessage msg);
     
     OtterSketch sketch;
-    otter::Queue currentQueue;
+    void createQueue();
     
+    QueueState queueState;
     QueueDrawer queueDrawer;
 };
