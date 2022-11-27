@@ -9,7 +9,7 @@ using namespace std;
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-    this->sketch = OtterSketch();
+    this->sketch = Sketch();
     createQueue();
 }
 

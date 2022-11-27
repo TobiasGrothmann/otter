@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		840C594D2932554700C8C78E /* OtterSketch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C594B2932554700C8C78E /* OtterSketch.cpp */; };
+		840C594D2932554700C8C78E /* Sketch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C594B2932554700C8C78E /* Sketch.cpp */; };
 		840C59502932889200C8C78E /* QueueDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C594E2932889200C8C78E /* QueueDrawer.cpp */; };
 		840C595329328E8800C8C78E /* ScaleHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C595229328E8800C8C78E /* ScaleHandler.cpp */; };
 		840C5956293382FA00C8C78E /* QueueState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840C5954293382FA00C8C78E /* QueueState.cpp */; };
@@ -28,8 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		840C594B2932554700C8C78E /* OtterSketch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OtterSketch.cpp; sourceTree = "<group>"; };
-		840C594C2932554700C8C78E /* OtterSketch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OtterSketch.hpp; sourceTree = "<group>"; };
+		840C594B2932554700C8C78E /* Sketch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sketch.cpp; sourceTree = "<group>"; };
+		840C594C2932554700C8C78E /* Sketch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sketch.hpp; sourceTree = "<group>"; };
 		840C594E2932889200C8C78E /* QueueDrawer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QueueDrawer.cpp; sourceTree = "<group>"; };
 		840C594F2932889200C8C78E /* QueueDrawer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QueueDrawer.hpp; sourceTree = "<group>"; };
 		840C595129328E8800C8C78E /* ScaleHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ScaleHandler.hpp; sourceTree = "<group>"; };
@@ -237,13 +237,13 @@
 			name = local_addons;
 			sourceTree = "<group>";
 		};
-		840C594A2932553600C8C78E /* OtterSketch */ = {
+		840C594A2932553600C8C78E /* Sketch */ = {
 			isa = PBXGroup;
 			children = (
-				840C594B2932554700C8C78E /* OtterSketch.cpp */,
-				840C594C2932554700C8C78E /* OtterSketch.hpp */,
+				840C594B2932554700C8C78E /* Sketch.cpp */,
+				840C594C2932554700C8C78E /* Sketch.hpp */,
 			);
-			path = OtterSketch;
+			path = Sketch;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -553,7 +553,7 @@
 			children = (
 				840C5954293382FA00C8C78E /* QueueState.cpp */,
 				840C5955293382FA00C8C78E /* QueueState.hpp */,
-				840C594A2932553600C8C78E /* OtterSketch */,
+				840C594A2932553600C8C78E /* Sketch */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
@@ -663,7 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840C594D2932554700C8C78E /* OtterSketch.cpp in Sources */,
+				840C594D2932554700C8C78E /* Sketch.cpp in Sources */,
 				840C5956293382FA00C8C78E /* QueueState.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				840C59502932889200C8C78E /* QueueDrawer.cpp in Sources */,

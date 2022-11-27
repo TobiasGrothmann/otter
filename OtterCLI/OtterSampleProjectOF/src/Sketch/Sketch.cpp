@@ -1,10 +1,10 @@
-#include "OtterSketch.hpp"
+#include "Sketch.hpp"
 
 using namespace otter;
 using namespace std;
 
 
-Queue OtterSketch::create(const QueueState& state)
+Queue Sketch::create(const QueueState& state)
 {
     Queue q = Queue();
     

@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-#include "OtterSketch.hpp"
+#include "Sketch.hpp"
 #include "QueueDrawer.hpp"
 
 #include "Otter.hpp"
@@ -27,7 +27,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    OtterSketch sketch;
+    Sketch sketch;
     void createQueue();
     
     QueueState queueState;

@@ -7,7 +7,7 @@
 #include "QueueState.hpp"
 
 
-class OtterSketch
+class Sketch
 {
 public:
     
