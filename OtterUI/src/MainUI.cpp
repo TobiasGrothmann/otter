@@ -292,22 +292,35 @@ void MainUI::drawCanvas(const ImVec2&)
             currentPos = points[points.size() - 1];
         }
         
-        ImVec2* imPoints = new ImVec2[points.size()];
-        VINDEX(points) cleanIndex = 0;
-        for (VINDEX(points) i = 0; i < points.size(); i++)
-        {
-            if (i != 0 && points[i] == points[i - 1])
-                continue; // skip repeating points
-            imPoints[cleanIndex] = scaleHandler.scale(points[i]);
-            cleanIndex++;
-        }
-        
         const bool isClosed = p->getIsClosed();
-        ImDrawFlags drawFlags = isClosed ? ImDrawFlags_Closed : ImDrawFlags_None;
-        int usedSize = isClosed ? (int)cleanIndex - 1 : (int)cleanIndex; // don't draw first/last point twice
         const ImU32 colorUsed = p == state.currentlyHoveredPlottable ? colorPenHovered : colorPen;
-        draw->AddPolyline(imPoints, usedSize, colorUsed, drawFlags, lineThicknessScaled);
-        delete[] imPoints;
+        const ImDrawFlags drawFlags = isClosed ? ImDrawFlags_Closed : ImDrawFlags_None;
+        
+        const VINDEX(points) maxLengthPolyLine = 5000;
+        VINDEX(points) currentIndex = 0;
+        VINDEX(points) pointsLeft = points.size();
+        while (pointsLeft > 0)
+        {
+            const VINDEX(points) pointsThisSection = min(maxLengthPolyLine, pointsLeft);
+            
+            ImVec2* imPoints = new ImVec2[pointsThisSection];
+            VINDEX(points) cleanIndex = 0;
+            for (VINDEX(points) j = 0; j < pointsThisSection; j++)
+            {
+                VINDEX(points) index = currentIndex + j;
+                if (index != 0 && points[index] == points[index - 1])
+                    continue; // skip repeating points
+                imPoints[cleanIndex] = scaleHandler.scale(points[index]);
+                cleanIndex++;
+            }
+            
+            pointsLeft -= pointsThisSection;
+            currentIndex += pointsThisSection;
+            
+            int usedSize = isClosed ? (int)cleanIndex - 1 : (int)cleanIndex; // don't draw first/last point twice
+            draw->AddPolyline(imPoints, usedSize, colorUsed, drawFlags, lineThicknessScaled);
+            delete[] imPoints;
+        }
     }
     if (canvasOptions.drawTravel)
         draw->AddLine(scaleHandler.scale(currentPos), scaleHandler.scale(Vec2(0, 0)), COLOR_HSV((float)hue, 1.0f, 0.75f), travelThickness);

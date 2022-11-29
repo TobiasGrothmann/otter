@@ -33,7 +33,7 @@ void renderForSomeFrames()
 #include "imgui_impl_metal.h"
 #if TARGET_OS_OSX
 #include "imgui_impl_osx.h"
-@interface AppViewController : NSViewController
+@interface AppViewController : NSViewController<NSWindowDelegate>
 @end
 #else
 @interface AppViewController : UIViewController
@@ -75,7 +75,7 @@ void renderForSomeFrames()
 
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
-    //ImGui::StyleColorsClassic();
+    //ImGui::StyleColorsLight();
 
     // Setup Renderer backend
     ImGui_ImplMetal_Init(_device);
@@ -85,13 +85,14 @@ void renderForSomeFrames()
     // - AddFontFromFileTTF() will return the ImFont* so you can store it if you need to select the font among multiple.
     // - If the file cannot be loaded, the function will return NULL. Please handle those errors in your application (e.g. use an assertion, or display an error and quit).
     // - The fonts will be rasterized at a given size (w/ oversampling) and stored into a texture when calling ImFontAtlas::Build()/GetTexDataAsXXXX(), which ImGui_ImplXXXX_NewFrame below will call.
-    // - Read 'docs/FONTS.txt' for more instructions and details.
+    // - Use '#define IMGUI_ENABLE_FREETYPE' in your imconfig file to use Freetype for higher quality font rendering.
+    // - Read 'docs/FONTS.md' for more instructions and details.
     // - Remember that in C/C++ if you want to include a backslash \ in a string literal you need to write a double backslash \\ !
     //io.Fonts->AddFontDefault();
+    //io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\segoeui.ttf", 18.0f);
+    //io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Cousine-Regular.ttf", 15.0f);
-    //io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
-    //io.Fonts->AddFontFromFileTTF("../../misc/fonts/ProggyTiny.ttf", 10.0f);
     //ImFont* font = io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\ArialUni.ttf", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
     //IM_ASSERT(font != NULL);
 
@@ -125,6 +126,9 @@ void renderForSomeFrames()
 
     ImGui_ImplOSX_Init(self.view);
 
+    
+    ImGui_ImplOSX_Init(self.view);
+    [NSApp activateIgnoringOtherApps:YES];
 #endif
 }
 
@@ -144,18 +148,16 @@ void renderForSomeFrames()
         ImGuiIO& io = ImGui::GetIO();
         io.DisplaySize.x = view.bounds.size.width;
         io.DisplaySize.y = view.bounds.size.height;
-
+        
 #if TARGET_OS_OSX
         CGFloat framebufferScale = view.window.screen.backingScaleFactor ?: NSScreen.mainScreen.backingScaleFactor;
 #else
         CGFloat framebufferScale = view.window.screen.scale ?: UIScreen.mainScreen.scale;
 #endif
         io.DisplayFramebufferScale = ImVec2(framebufferScale, framebufferScale);
-
-        io.DeltaTime = 1 / float(view.preferredFramesPerSecond ?: 60);
-
+        
         id<MTLCommandBuffer> commandBuffer = [self.commandQueue commandBuffer];
-
+        
         MTLRenderPassDescriptor* renderPassDescriptor = view.currentRenderPassDescriptor;
         if (renderPassDescriptor == nil)
         {
@@ -169,11 +171,11 @@ void renderForSomeFrames()
         ImGui_ImplOSX_NewFrame(view);
 #endif
         ImGui::NewFrame();
-
+        
         // OTTER RENDER BEGIN
         MainUI::Get()->render();
         // OTTER RENDER END
-
+        
         
         // Rendering
         ImGui::Render();
@@ -186,7 +188,7 @@ void renderForSomeFrames()
         ImGui_ImplMetal_RenderDrawData(draw_data, commandBuffer, renderEncoder);
         [renderEncoder popDebugGroup];
         [renderEncoder endEncoding];
-
+        
         // Present
         [commandBuffer presentDrawable:view.currentDrawable];
         [commandBuffer commit];
@@ -203,71 +205,71 @@ void renderForSomeFrames()
 
 #if TARGET_OS_OSX
 
+- (void)viewWillAppear
+{
+    [super viewWillAppear];
+    self.view.window.delegate = self;
+}
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+    ImGui_ImplMetal_Shutdown();
+    ImGui_ImplOSX_Shutdown();
+    ImGui::DestroyContext();
+}
+
 // Forward Mouse events to Dear ImGui OSX backend.
 -(void)mouseDown:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)rightMouseDown:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)otherMouseDown:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)mouseUp:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)rightMouseUp:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)otherMouseUp:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)mouseMoved:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)mouseDragged:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)rightMouseMoved:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)rightMouseDragged:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)otherMouseMoved:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)otherMouseDragged:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 -(void)scrollWheel:(NSEvent *)event
 {
     renderForSomeFrames();
-    ImGui_ImplOSX_HandleEvent(event, self.view);
 }
 
 #else
@@ -332,9 +334,8 @@ void renderForSomeFrames()
                                                     backing:NSBackingStoreBuffered
                                                       defer:NO];
         self.window.contentViewController = rootViewController;
-        [self.window orderFront:self];
         [self.window center];
-        [self.window becomeKeyWindow];
+        [self.window makeKeyAndOrderFront:self];
     }
     return self;
 }
@@ -382,7 +383,7 @@ int main(int argc, const char * argv[])
     // OTTER BEGIN
     HandleArgs(argc, argv);
     // OTTER END
-
+    
     return NSApplicationMain(argc, argv);
 }
 
