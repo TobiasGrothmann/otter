@@ -50,7 +50,7 @@ void QueueDrawer::drawGrid(const State& queueState)
 
 void QueueDrawer::drawQueue(const State& queueState)
 {
-    ofSetColor(0, 0, 0);
+    ofSetColor(0, 0, 0, 110);
     
     for (const PlottablePtr& plottable : queueState.queue.items)
     {
