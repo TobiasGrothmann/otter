@@ -34,12 +34,14 @@ void State::recomputeScale()
 
 void State::SetMousePos(const Vec2& mousePos_screenSpace)
 {
-    mousePos_otterSpace = scaleHandler.scaleReverse(mousePos_screenSpace);
+    mousePos = scaleHandler.scaleReverse(mousePos_screenSpace);
 }
 
 void State::SetMouseClick(const otter::Vec2& mouseClick_screenSpace)
 {
-    mouseClick_otterSpace = scaleHandler.scaleReverse(mouseClick_screenSpace);
+    Vec2 pos = scaleHandler.scaleReverse(mouseClick_screenSpace);
+    mouseClick = pos;
+    mousePos = pos;
 }
 
 void State::update()

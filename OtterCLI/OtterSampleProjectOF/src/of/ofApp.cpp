@@ -34,12 +34,33 @@ void ofApp::keyPressed(int key)
 {
     if (key == ' ')
         createQueue();
+    else if (key == OF_KEY_CONTROL)
+        state.controlDown = true;
+    else if (key == OF_KEY_ALT)
+        state.altDown = true;
+    else if (key == OF_KEY_COMMAND)
+        state.commandDown = true;
+    else if (key == OF_KEY_SHIFT)
+        state.shiftDown = true;
+    
+    if (state.commandDown && key == 'p')
+    {
+        cout << "sending to preview" << endl;
+        state.queue.preview();
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key)
 {
-
+    if (key == OF_KEY_CONTROL)
+        state.controlDown = false;
+    else if (key == OF_KEY_ALT)
+        state.altDown = false;
+    else if (key == OF_KEY_COMMAND)
+        state.commandDown = false;
+    else if (key == OF_KEY_SHIFT)
+        state.shiftDown = false;
 }
 
 //--------------------------------------------------------------
@@ -70,8 +91,6 @@ void ofApp::mousePressed(int x, int y, int button)
 void ofApp::mouseReleased(int x, int y, int button)
 {
     state.SetMouseClick(Vec2(x, y));
-    if (sketch.updateOnMouseClick)
-        createQueue();
 }
 
 //--------------------------------------------------------------
