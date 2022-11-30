@@ -3,7 +3,8 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 
-#include "Sketch.hpp"
+#include "OtterSketchOF.hpp"
+#include "OtterSampleProjectOF.hpp"
 #include "QueueDrawer.hpp"
 
 #include "Otter.hpp"
@@ -12,6 +13,8 @@
 class ofApp : public ofBaseApp
 {
 public:
+    ofApp();
+    
     void setup();
     void update();
     void draw();
@@ -28,7 +31,15 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    Sketch sketch;
+    
+    ofxPanel gui;
+    
+    void paramIntChanged(int& param);
+    void paramFloatChanged(float& param);
+    void paramBoolChanged(bool& param);
+    
+    
+    OtterSampleProjectOF sketch;
     void createQueue();
     
     State state;

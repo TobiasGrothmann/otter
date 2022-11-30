@@ -6,12 +6,35 @@ using namespace otter;
 using namespace std;
 
 
+ofApp::ofApp()
+    : ofBaseApp()
+    , sketch(OtterSampleProjectOF())
+{
+}
+
+
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-    this->sketch = Sketch();
     this->sketch.setup();
     createQueue();
+    
+    gui.setup();
+    for (ofxToggle* param : this->sketch.paramsBool)
+    {
+        param->addListener(this, &ofApp::paramBoolChanged);
+        gui.add(param);
+    }
+    for (ofxIntSlider* param : this->sketch.paramsInt)
+    {
+        param->addListener(this, &ofApp::paramIntChanged);
+        gui.add(param);
+    }
+    for (ofxFloatSlider* param : this->sketch.paramsFloat)
+    {
+        param->addListener(this, &ofApp::paramFloatChanged);
+        gui.add(param);
+    }
 }
 
 //--------------------------------------------------------------
@@ -27,6 +50,8 @@ void ofApp::draw()
 {
     state.update();
     queueDrawer.draw(state);
+    
+    gui.draw();
 }
 
 //--------------------------------------------------------------
@@ -130,4 +155,20 @@ void ofApp::dragEvent(ofDragInfo dragInfo)
 void ofApp::createQueue()
 {
     this->state.setQueue(this->sketch.create(state));
+}
+
+void ofApp::paramIntChanged(int& param)
+{
+    if (this->sketch.updateOnParamChange)
+        createQueue();
+}
+void ofApp::paramFloatChanged(float& param)
+{
+    if (this->sketch.updateOnParamChange)
+        createQueue();
+}
+void ofApp::paramBoolChanged(bool& param)
+{
+    if (this->sketch.updateOnParamChange)
+        createQueue();
 }
