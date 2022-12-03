@@ -19,6 +19,8 @@ void ofApp::setup()
     this->sketch.setup();
     createQueue();
     
+    ofxGuiSetDefaultWidth(800);
+    
     gui.setup();
     for (ofxToggle* param : this->sketch.paramsBool)
     {
@@ -49,7 +51,7 @@ void ofApp::update()
 void ofApp::draw()
 {
     state.update();
-    queueDrawer.draw(state);
+        queueDrawer.draw(state);
     
     gui.draw();
 }
