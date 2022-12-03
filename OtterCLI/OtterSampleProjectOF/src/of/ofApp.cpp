@@ -50,7 +50,7 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-    state.update();
+    if (needsDrawing)
         queueDrawer.draw(state);
     
     gui.draw();
@@ -157,6 +157,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo)
 void ofApp::createQueue()
 {
     this->state.setQueue(this->sketch.create(state));
+    needsDrawing = true;
 }
 
 void ofApp::paramIntChanged(int& param)

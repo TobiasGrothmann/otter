@@ -33,6 +33,7 @@ public:
     
     
     ofxPanel gui;
+    bool needsDrawing = true;
     
     void paramIntChanged(int& param);
     void paramFloatChanged(float& param);
