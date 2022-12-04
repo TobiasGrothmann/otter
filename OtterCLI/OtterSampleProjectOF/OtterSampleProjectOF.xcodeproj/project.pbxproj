@@ -15,7 +15,7 @@
 		6B6D163BD8A4BA67C005B65B /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6F5CEE6C0284EEF97D149 /* ofxToggle.cpp */; };
 		6B78B03D26948D8E8A146DAA /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8DC4D754585587D1FC0B4 /* ofxSliderGroup.cpp */; };
 		8331A14DD34E52BF9B61853C /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8DCE0A5C5956C4F8C03B085 /* ofxPanel.cpp */; };
-		84601E1B2936927D0027AAA8 /* OtterSketchOF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84601E192936927D0027AAA8 /* OtterSketchOF.cpp */; };
+		849805C6293CAC0B00784DB3 /* OtterSketchOF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849805C4293CAC0B00784DB3 /* OtterSketchOF.cpp */; };
 		934D34EF24AE8C6467FC7DAB /* ScaleHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1679F24ACF8AF0C9F568CEF /* ScaleHandler.cpp */; };
 		A9A290DC709836730A7FD5F3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2240E436747DEFBF800DF3B8 /* main.cpp */; };
 		CB6E5540E5A014FEDD7B78F7 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5475593604A176D74850A7 /* ofxBaseGui.cpp */; };
@@ -59,8 +59,8 @@
 		6DCF9BAF230483D2513B7FE5 /* ofxInputField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxInputField.cpp; path = ../../../../../../Applications/of_v0.11.2_osx_release/addons/ofxGui/src/ofxInputField.cpp; sourceTree = SOURCE_ROOT; };
 		7DC8DC4D754585587D1FC0B4 /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSliderGroup.cpp; path = ../../../../../../Applications/of_v0.11.2_osx_release/addons/ofxGui/src/ofxSliderGroup.cpp; sourceTree = SOURCE_ROOT; };
 		7F0C762569481504B4821D47 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/of/ofApp.cpp; sourceTree = SOURCE_ROOT; };
-		84601E192936927D0027AAA8 /* OtterSketchOF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OtterSketchOF.cpp; sourceTree = "<group>"; };
-		84601E1A2936927D0027AAA8 /* OtterSketchOF.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OtterSketchOF.hpp; sourceTree = "<group>"; };
+		849805C4293CAC0B00784DB3 /* OtterSketchOF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OtterSketchOF.cpp; path = of/OtterSketchOF.cpp; sourceTree = "<group>"; };
+		849805C5293CAC0B00784DB3 /* OtterSketchOF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OtterSketchOF.hpp; path = of/OtterSketchOF.hpp; sourceTree = "<group>"; };
 		88282C7F47CBD8AE33A0C776 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../../../../../Applications/of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
 		9C9E166A67CC53E0C80486F5 /* QueueDrawer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = QueueDrawer.hpp; path = src/of/QueueDrawer.hpp; sourceTree = SOURCE_ROOT; };
 		A362EB596C679B13617B2CE6 /* State.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = State.cpp; path = src/of/State.cpp; sourceTree = SOURCE_ROOT; };
@@ -280,15 +280,6 @@
 			name = local_addons;
 			sourceTree = "<group>";
 		};
-		84601E18293692720027AAA8 /* ofOtter */ = {
-			isa = PBXGroup;
-			children = (
-				84601E192936927D0027AAA8 /* OtterSketchOF.cpp */,
-				84601E1A2936927D0027AAA8 /* OtterSketchOF.hpp */,
-			);
-			name = ofOtter;
-			sourceTree = "<group>";
-		};
 		A763ED608B35AE3310251DEE /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +312,8 @@
 		AA566B97EF25DC4283BA24F7 /* of */ = {
 			isa = PBXGroup;
 			children = (
+				849805C4293CAC0B00784DB3 /* OtterSketchOF.cpp */,
+				849805C5293CAC0B00784DB3 /* OtterSketchOF.hpp */,
 				04CB9B70667C4E2B468303E9 /* QueueDrawer.cpp */,
 				9C9E166A67CC53E0C80486F5 /* QueueDrawer.hpp */,
 				F1679F24ACF8AF0C9F568CEF /* ScaleHandler.cpp */,
@@ -649,7 +642,6 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				84601E18293692720027AAA8 /* ofOtter */,
 				AA566B97EF25DC4283BA24F7 /* of */,
 				CC6E51732283551AF2F3D7A1 /* Sketch */,
 			);
@@ -756,6 +748,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D39293CA8882B0B0AD0BA523 /* QueueDrawer.cpp in Sources */,
+				849805C6293CAC0B00784DB3 /* OtterSketchOF.cpp in Sources */,
 				934D34EF24AE8C6467FC7DAB /* ScaleHandler.cpp in Sources */,
 				09EE71493B08AE18C3A91C74 /* State.cpp in Sources */,
 				F5BC603362BC7080BCE164D4 /* ofApp.cpp in Sources */,
@@ -767,7 +760,6 @@
 				E3E13D65B6FDB700680BFE23 /* ofxGuiGroup.cpp in Sources */,
 				F0E9A8D7B3BA93FFEA322660 /* ofxInputField.cpp in Sources */,
 				415A77CC938B01A6560969D2 /* ofxLabel.cpp in Sources */,
-				84601E1B2936927D0027AAA8 /* OtterSketchOF.cpp in Sources */,
 				8331A14DD34E52BF9B61853C /* ofxPanel.cpp in Sources */,
 				33EFA65DC4C732794E6DBD85 /* ofxSlider.cpp in Sources */,
 				6B78B03D26948D8E8A146DAA /* ofxSliderGroup.cpp in Sources */,
