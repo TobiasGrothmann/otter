@@ -1,5 +1,9 @@
 #pragma once
-#include "core.hpp"
+
+#include "Otter.hpp"
+
+#include "ofMain.h"
+
 
 class ScaleHandler
 {
@@ -15,7 +19,7 @@ public:
     void resetZoom();
     
     // scale from otter space to screen space
-    ImVec2 scale(const otter::Vec2& otterPoint) const;
+    ofVec2f scale(const otter::Vec2& otterPoint) const;
     double scale(double distance) const;
     
     // scale from screen space to otter space
