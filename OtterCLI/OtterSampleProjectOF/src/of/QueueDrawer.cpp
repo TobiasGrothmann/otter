@@ -14,6 +14,7 @@ void QueueDrawer::draw(const State& queueState)
 
 void QueueDrawer::drawGrid(const State& queueState)
 {
+    ofSetLineWidth(1);
     const Vec2 minOtterSpace = queueState.scaleHandler.scaleReverse(Vec2(queueState.windowTopLeft_screenSpace) +
                                                                     queueState.windowSize_screenSpace.onlyY());
     const Vec2 maxOtterSpace = queueState.scaleHandler.scaleReverse(Vec2(queueState.windowTopLeft_screenSpace) +
@@ -51,6 +52,9 @@ void QueueDrawer::drawGrid(const State& queueState)
 void QueueDrawer::drawQueue(const State& queueState)
 {
     ofSetColor(0, 0, 0, 110);
+    
+    double lineWidth = queueState.scaleHandler.scale(queueState.queue.settings.pen.lineDiameter);
+    ofSetLineWidth(lineWidth);
     
     for (const PlottablePtr& plottable : queueState.queue.items)
     {
