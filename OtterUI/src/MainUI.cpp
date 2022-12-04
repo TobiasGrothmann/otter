@@ -235,7 +235,7 @@ void MainUI::drawCanvas(const ImVec2&)
     static const ImU32 colorBackground = GRAY(1.0f);
     static const ImU32 colorGrid = GRID_COL(1.0f - 0.185f);
     static const ImU32 colorGridHighlight = GRID_COL(1.0f - 0.42f);
-    static const ImU32 colorGridZero = GRID_COL(1.0 - 0.9f);
+    static const ImU32 colorGridZero = GRID_COL(1.0f - 0.9f);
     static const ImU32 colorPen = GetColorU32(state.queue->settings.pen.color);
     static const ImU32 colorPenHovered = COLOR(1.0f, 0.0f, 0.0f);
     
