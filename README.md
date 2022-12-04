@@ -93,7 +93,7 @@ and
 ```
 sudo make install
 ```
-will build and install only the **Otter core** (*libotter.a*) library an the **Otter Server** (*otterServer*) executable.
+will build and install only the **Otter core** (*libotter.a*) library and the **Otter Server** (*otterServer*) executable.
 
 
 
