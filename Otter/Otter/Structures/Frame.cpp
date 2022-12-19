@@ -33,4 +33,9 @@ shared_ptr<Rectangle> Frame::getOuterRectangle() const
     return make_shared<Rectangle>(bottomLeft, bottomLeft + size);
 }
 
+otter::Vec2 Frame::getCenter() const
+{
+    return bottomLeft + size * 0.5;
+}
+
 }

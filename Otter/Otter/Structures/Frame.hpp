@@ -23,6 +23,8 @@ public:
     std::shared_ptr<Rectangle> getInnerRectangle() const;
     std::shared_ptr<Rectangle> getOuterRectangle() const;
     
+    otter::Vec2 getCenter() const;
+    
 private:
     Vec2 bottomLeft;
     Vec2 size;
