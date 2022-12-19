@@ -31,7 +31,7 @@ struct State
         queueSize = queueBounds.getSize();
         
         // quadtree
-        quadTree = otter::QuadTree(*queue, 8, true, otter::SampleSettings(8.0));
+        quadTree = otter::QuadTree(*queue, 200, true, otter::SampleSettings(2.0));
     }
     
     std::shared_ptr<otter::Queue> queue = {};
