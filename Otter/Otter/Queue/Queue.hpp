@@ -84,6 +84,10 @@ public:
     /// scale all plottables
     /// @param factor scale factor
     void scale(const double factor);
+    /// scale all plottables at location
+    /// @param pivot center point of scaling
+    /// @param factor scale factor in both dimensions
+    void scaleAt(const Vec2& pivot, double factor);
     /// rotate all plottables
     /// @param pivot rotation center
     /// @param angle angle of rotation

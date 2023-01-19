@@ -385,6 +385,13 @@ void Queue::scale(const double factor)
         item->scale(factor);
     }
 }
+void Queue::scaleAt(const Vec2& pivot, double factor)
+{
+    for (shared_ptr<Plottable>& item : items)
+    {
+        item->scaleAt(pivot, factor);
+    }
+}
 
 void Queue::rotate(const Vec2& pivot, double angle)
 {
