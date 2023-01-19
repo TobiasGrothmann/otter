@@ -114,6 +114,8 @@
 		84C8C31127C7BB1F00540901 /* stl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84C8C31027C7BB1F00540901 /* stl.hpp */; };
 		84D7CE3823E04CC2005BA771 /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84D7CE3623E04CC2005BA771 /* Queue.cpp */; };
 		84D7CE3923E04CC2005BA771 /* Queue.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84D7CE3723E04CC2005BA771 /* Queue.hpp */; };
+		84DA74CD297966E900F09CFB /* Dash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DA74CB297966E900F09CFB /* Dash.cpp */; };
+		84DA74CE297966E900F09CFB /* Dash.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84DA74CC297966E900F09CFB /* Dash.hpp */; };
 		84E16BAA24462FD1002F41CA /* QueueSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E16BA824462FD1002F41CA /* QueueSettings.cpp */; };
 		84E16BAB24462FD1002F41CA /* QueueSettings.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84E16BA924462FD1002F41CA /* QueueSettings.hpp */; };
 		84E38FF127170B3E00048E6D /* GeometryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E38FF027170B3E00048E6D /* GeometryTest.cpp */; };
@@ -234,6 +236,8 @@
 		84C8C31027C7BB1F00540901 /* stl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = stl.hpp; sourceTree = "<group>"; };
 		84D7CE3623E04CC2005BA771 /* Queue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
 		84D7CE3723E04CC2005BA771 /* Queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
+		84DA74CB297966E900F09CFB /* Dash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dash.cpp; sourceTree = "<group>"; };
+		84DA74CC297966E900F09CFB /* Dash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Dash.hpp; sourceTree = "<group>"; };
 		84E16BA824462FD1002F41CA /* QueueSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QueueSettings.cpp; sourceTree = "<group>"; };
 		84E16BA924462FD1002F41CA /* QueueSettings.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QueueSettings.hpp; sourceTree = "<group>"; };
 		84E38FF027170B3E00048E6D /* GeometryTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryTest.cpp; sourceTree = "<group>"; };
@@ -534,6 +538,8 @@
 			children = (
 				849B7EE128D90DEA006ACF90 /* Blur.cpp */,
 				849B7EE228D90DEA006ACF90 /* Blur.hpp */,
+				84DA74CB297966E900F09CFB /* Dash.cpp */,
+				84DA74CC297966E900F09CFB /* Dash.hpp */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -610,6 +616,7 @@
 				8477AD5D23F31F0E00573B3C /* Frame.hpp in Headers */,
 				847C6F192796E91700A5881C /* Distortion.hpp in Headers */,
 				847C6F112796E91700A5881C /* DistortionAroundCenter.hpp in Headers */,
+				84DA74CE297966E900F09CFB /* Dash.hpp in Headers */,
 				847C6F1B2796E91700A5881C /* Rand.hpp in Headers */,
 				847C6EF02796E91600A5881C /* PlottableUtil.hpp in Headers */,
 				848C33D22440E0180007DE8E /* Serializable.hpp in Headers */,
@@ -715,6 +722,7 @@
 				847C6F012796E91700A5881C /* ConcentricCircles.cpp in Sources */,
 				847C6EFD2796E91700A5881C /* ParallelLines.cpp in Sources */,
 				847C6F032796E91700A5881C /* HexGrid.cpp in Sources */,
+				84DA74CD297966E900F09CFB /* Dash.cpp in Sources */,
 				847C6F122796E91700A5881C /* Distortion.cpp in Sources */,
 				84A372292796F6F900EDE2DF /* HexGridVertices.cpp in Sources */,
 				847C6F312796E91700A5881C /* Filling.cpp in Sources */,

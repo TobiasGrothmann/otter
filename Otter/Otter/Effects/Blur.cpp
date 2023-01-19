@@ -8,7 +8,11 @@ using namespace std;
 
 namespace otter {
 
-Queue Blur::blur(const shared_ptr<Plottable> plottable, double penWidth, const std::function<double(const Vec2&, double, double)>& func)
+Queue Blur::blur(const shared_ptr<Plottable> plottable,
+                 double penWidth,
+                 const std::function<double(const Vec2& point,
+                                            double pathDistance,
+                                            double pathFraction)>& func)
 {
     const double interval = (1.0 / penWidth) * 1.9;
     
@@ -67,12 +71,18 @@ Queue Blur::blur(const shared_ptr<Plottable> plottable, double penWidth, const s
     return blurred;
 }
 
-Queue Blur::blur(const shared_ptr<Plottable> plottable, double penWidth, double blurAmount)
+Queue Blur::blur(const shared_ptr<Plottable> plottable,
+                 double penWidth,
+                 double blurAmount)
 {
     return blur(plottable, penWidth, [blurAmount](const Vec2&, double, double) -> double { return blurAmount; });
 }
 
-Queue Blur::blur(const Queue& queue, double penWidth, const std::function<double(const Vec2&, double, double)>& func)
+Queue Blur::blur(const Queue& queue,
+                 double penWidth,
+                 const std::function<double(const Vec2& point,
+                                            double pathDistance,
+                                            double pathFraction)>& func)
 {
     Queue blurredQueue = Queue();
     blurredQueue.items.reserve(queue.items.size());
@@ -83,7 +93,9 @@ Queue Blur::blur(const Queue& queue, double penWidth, const std::function<double
     return blurredQueue;
 }
 
-Queue Blur::blur(const Queue& queue, double penWidth, double blurAmount)
+Queue Blur::blur(const Queue& queue,
+                 double penWidth,
+                 double blurAmount)
 {
     Queue blurredQueue = Queue();
     blurredQueue.items.reserve(queue.items.size());

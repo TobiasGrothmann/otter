@@ -55,6 +55,7 @@ using BezierPtr = std::shared_ptr<otter::Bezier>;
 #include "Util/Filling/Filling.hpp"
 
 #include "Effects/Blur.hpp"
+#include "Effects/Dash.hpp"
 
 #include "Serialize/Serializable.hpp"
 #include "Serialize/SerializableFactory.hpp"
