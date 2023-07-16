@@ -53,6 +53,7 @@ using BezierPtr = std::shared_ptr<otter::Bezier>;
 #include "Util/SampleFunction/SampleFunction.hpp"
 #include "Util/FlowField/FlowField.hpp"
 #include "Util/Filling/Filling.hpp"
+#include "Util/PlottableUtil/PlottableUtil.hpp"
 
 #include "Effects/Blur.hpp"
 #include "Effects/Dash.hpp"
