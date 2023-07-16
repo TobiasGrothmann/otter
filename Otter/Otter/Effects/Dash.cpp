@@ -86,7 +86,7 @@ Queue Dash::dash(const std::shared_ptr<Plottable> plottable,
 {
     return dash(plottable, [dashLength, gapLength](const Vec2& point,
                                                    bool isGap,
-                                                   double pahtDistance,
+                                                   double pathDistance,
                                                    double pathFraction) -> double
     {
         return isGap ? gapLength : dashLength;
