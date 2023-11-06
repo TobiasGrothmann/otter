@@ -12,7 +12,7 @@ public:
     /// @param path path to the .svg file
     /// @param outQueue returned queue
     /// @return success status
-    static bool read(const std::string& path, Queue& outQueue);
+    static bool read(const std::string& path, Queue& outQueue, double scale);
     /// write an otter Queue to file as .svg file
     /// @param queue queue to convert
     /// @param path path to write to

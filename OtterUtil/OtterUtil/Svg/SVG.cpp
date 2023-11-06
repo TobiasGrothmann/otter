@@ -8,11 +8,11 @@ using namespace std;
 
 namespace otter {
 
-bool SVG::read(const string& path, Queue& outQueue)
+bool SVG::read(const string& path, Queue& outQueue, double scale)
 {
     NSVGimage* image = NULL;
 
-    image = nsvgParseFromFile(path.c_str(), "cm", 96.0f);
+    image = nsvgParseFromFile(path.c_str(), "px", 96);
 
     if (image == NULL) {
         return false;
@@ -21,26 +21,23 @@ bool SVG::read(const string& path, Queue& outQueue)
     NSVGshape* shape = image->shapes;
     while (shape != nullptr)
     {
-        const Rectangle shapeBounds = Rectangle(Vec2(shape->bounds[0], shape->bounds[1]),
-                                                Vec2(shape->bounds[2], shape->bounds[3]));
         NSVGpath* segment = shape->paths;
         while (segment != nullptr)
         {
             shared_ptr<Path> newPath = make_shared<Path>();
-            for (int i = 0; i < segment->npts-1; i += 3) {
+            for (int i = 0; i < segment->npts - 1; i += 3) {
                 float* p = &segment->pts[i * 2];
                 Bezier bezier = Bezier::create({
-                    Vec2(p[0], -p[1]),
-                    Vec2(p[2], -p[3]),
-                    Vec2(p[4], -p[5]),
-                    Vec2(p[6], -p[7])
+                    Vec2(p[0] * scale, -p[1] * scale),
+                    Vec2(p[2] * scale, -p[3] * scale),
+                    Vec2(p[4] * scale, -p[5] * scale),
+                    Vec2(p[6] * scale, -p[7] * scale)
                 });
                 newPath->add(bezier.getPlottablePoints());
             }
+            
             if (segment->closed && newPath->points.size() >= 1)
-            {
-                newPath->add(newPath->points[newPath->points.size() - 1]);
-            }
+                newPath->close();
 
             outQueue.add(newPath);
             segment = segment->next;
