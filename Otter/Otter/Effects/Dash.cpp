@@ -12,7 +12,7 @@ Queue Dash::dash(const std::shared_ptr<Plottable> plottable,
                  const std::function<double(const Vec2& point,
                                             bool isGap,
                                             double pathDistance,
-                                            double pahtFraction)>& func)
+                                            double pathFraction)>& func)
 {
     Queue dashed = Queue();
     const vector<Vec2> points = plottable->getPlottablePoints(SampleSettings(20));

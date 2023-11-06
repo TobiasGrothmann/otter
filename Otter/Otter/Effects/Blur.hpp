@@ -36,7 +36,7 @@ public:
                       double penWidth,
                       const std::function<double(const Vec2& point,
                                                  double pathDistance,
-                                                 double pahtFraction)>& func);
+                                                 double pathFraction)>& func);
     
     /// Blur all plottables in a queue.
     /// @param queue queue to blur

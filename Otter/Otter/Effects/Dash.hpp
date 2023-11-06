@@ -17,7 +17,7 @@ public:
                       const std::function<double(const Vec2& point,
                                                  bool isGap,
                                                  double pathDistance,
-                                                 double pahtFraction)>& func);
+                                                 double pathFraction)>& func);
     
     /// Dash a single plottable.
     /// @param plottable plottable to dash
