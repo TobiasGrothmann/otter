@@ -84,8 +84,11 @@ void Circle::serialize(ostream& os) const
 }
 shared_ptr<Serializable> Circle::deserialize(const vector<string>& subElements)
 {
-    Vec2* newCenter = static_cast<Vec2*>(SerializableFactory::createPtr(subElements[0]).get());
-    double newRadius = Math::doubleFromString(subElements[1]);
+    shared_ptr<Serializable> newCenterShared = SerializableFactory::createPtr(subElements[0]);
+    Vec2* newCenter = dynamic_pointer_cast<Vec2>(newCenterShared).get();
+    
+    const double newRadius = Math::doubleFromString(subElements[1]);
+    
     return make_shared<Circle>(*newCenter, newRadius);
 }
 string Circle::getName() const
