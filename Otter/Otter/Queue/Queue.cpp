@@ -244,6 +244,7 @@ const array<Vec2, 2> Queue::getStartAndEndFromPlottalbe(const shared_ptr<Plottab
     return startAndEnd;
 }
 
+// TODO: resolve crossed path
 void Queue::optimize()
 {
     vector<array<Vec2, 2>> startsAndEnds;
