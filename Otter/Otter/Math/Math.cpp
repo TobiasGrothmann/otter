@@ -4,13 +4,9 @@ using namespace std;
 
 namespace otter {
 
-double Math::doubleFromString(string value)
+double Math::doubleFromString(const string& value)
 {
-    try {
-        return stod(value);
-    } catch (out_of_range e) {
-        return 0.0;
-    }
+    return stod(value);
 }
 
 double Math::radToDeg(double rad)
