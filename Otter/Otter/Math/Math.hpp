@@ -21,7 +21,7 @@ public:
     /// create double from string. Will return 0.0 if not parsable!
     /// TODO: bit silly to return 0.0 ;)
     /// @param value string value parsable to number
-    static double doubleFromString(std::string value);
+    static double doubleFromString(const std::string& value);
     
     /// convert radiants (one rotation: 0.0 -> 2*pi) to degree (one rotation: 0 - 360)
     /// @param rad radians value
