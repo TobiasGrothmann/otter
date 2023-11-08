@@ -10,9 +10,8 @@ class SVG {
 public:
     /// read an svg and turn it into an otter Queue
     /// @param path path to the .svg file
-    /// @param outQueue returned queue
-    /// @return success status
-    static bool read(const std::string& path, Queue& outQueue, double scale);
+    /// @return read queue
+    static Queue read(const std::string& path, double scale);
     /// write an otter Queue to file as .svg file
     /// @param queue queue to convert
     /// @param path path to write to

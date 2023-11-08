@@ -8,15 +8,15 @@ using namespace std;
 
 namespace otter {
 
-bool SVG::read(const string& path, Queue& outQueue, double scale)
+Queue SVG::read(const string& path, double scale)
 {
+    Queue outQueue;
     NSVGimage* image = NULL;
 
     image = nsvgParseFromFile(path.c_str(), "px", 96);
 
-    if (image == NULL) {
-        return false;
-    }
+    if (image == NULL)
+        throw std::invalid_argument("invalid path" + path);
 
     NSVGshape* shape = image->shapes;
     while (shape != nullptr)
@@ -45,7 +45,7 @@ bool SVG::read(const string& path, Queue& outQueue, double scale)
         shape = shape->next;
     }
 
-    return true;
+    return outQueue;
 }
 
 
