@@ -4,18 +4,17 @@
 
 Otter is a framework to create generative plotter art. It contains:
 
-* **Otter** – core library
-* **OtterUtil** – library for extended functionality using third party libraries:
-	* Voronoi – [jc_voronoi by Mathias Westerdahl](https://github.com/JCash/voronoi)
-	* Image handling – [OpenCV](https://opencv.org/)
-	* clipping, offset and boolean operations of paths – [Clipper by Angus Johnson](http://www.angusj.com/delphi/clipper.php)
-	* QR-Code generation – [QR Code generator library by Nayuki](https://github.com/nayuki/QR-Code-generator)
-	* SVG – [Simple SVG by Mark Turney](https://github.com/MarkTurney/simple-svg) and [Nano SVG by Mikko Mononen](https://github.com/memononen/nanosvg)
-	* Font handling – [ttf-parser by kv01](https://github.com/kv01/ttf-parser)
-* **OtterCLI** – command line utility to create and manage otter projects
-* **OtterUI** – preview to display projects and remotely control otterServer
-* **OtterServer** – server running on a raspberry pi controlling the pen-plotter
-
+- **Otter** – core library
+- **OtterUtil** – library for extended functionality using third party libraries:
+  - Voronoi – [jc_voronoi by Mathias Westerdahl](https://github.com/JCash/voronoi)
+  - Image handling – [OpenCV](https://opencv.org/)
+  - clipping, offset and boolean operations of paths – [Clipper by Angus Johnson](http://www.angusj.com/delphi/clipper.php)
+  - QR-Code generation – [QR Code generator library by Nayuki](https://github.com/nayuki/QR-Code-generator)
+  - SVG – [Simple SVG by Mark Turney](https://github.com/MarkTurney/simple-svg) and [Nano SVG by Mikko Mononen](https://github.com/memononen/nanosvg)
+  - Font handling – [ttf-parser by kv01](https://github.com/kv01/ttf-parser)
+- **OtterCLI** – command line utility to create and manage otter projects
+- **OtterUI** – preview to display projects and remotely control otterServer
+- **OtterServer** – server running on a raspberry pi controlling the pen-plotter
 
 ## Who is this for?
 
@@ -25,7 +24,6 @@ This is a hobby project I personally use for recreational pen-plotter art. The d
 	<img src="https://user-images.githubusercontent.com/28928394/158394767-f53f723f-86a3-45d1-84fd-8e63b3a6f897.jpg" alt="nimble otter" width="350"/>
 </p>
 
-
 ## Some examples
 
 Some results, created using Otter, can be seen on [instagram](https://www.instagram.com/tobias_grothmann/):
@@ -34,16 +32,15 @@ Some results, created using Otter, can be seen on [instagram](https://www.instag
 ![truchet pattern](https://user-images.githubusercontent.com/28928394/158366290-a5b1fdd1-2b3b-4669-9d10-7ebd00dca64e.jpg)
 ![hexagonal truchet pattern](https://user-images.githubusercontent.com/28928394/158366314-a822e9c3-e134-4edc-9a4f-c86b8ece1f27.jpg)
 
-
 ## Build on macOS
 
 Because some parts of the framework have to be compiled on Mac and Raspberry Pi, a mixture of Xcode and Makefiles is used for compilation.
 
 Install requirements:
 
-* boost (`brew install boost`)
-* opencv 2 (`brew install opencv@2`)
-* xcode build tools (`xcode-select --install`)
+- boost (`brew install boost`)
+- opencv 2 (`brew install opencv@2`)
+- xcode build tools (`xcode-select --install`)
 
 Building `Otter`, `OtterUtil`, `OtterUI` and `OtterServer` on **macOS Monterey** should be as simple as:
 
@@ -69,10 +66,9 @@ sudo make install
 
 This step will also install `OtterCLI` and set the environment variable `OTTER_HOME` to the path your otter repository is located.
 
-----
+---
 
 If you only want to compile e.g. the Otter core library, change directory into the required folder (`cd Otter`) and use `make` and `sudo make install` there.
-
 
 ## Build on Raspberry Pi
 
@@ -80,7 +76,9 @@ OtterServer is designed to control my DIY plotter. If you'd like to use it, ther
 
 Install requirements:
 
-* boost (`sudo apt install boost`)
+- boost (`sudo apt install libboost-all-dev`)
+- gcc (`sudo apt install gcc`)
+- std c++ (`sudo apt install libstdc++-8-dev`)
 
 On your Raspberry Pi:
 
@@ -93,9 +91,8 @@ and
 ```
 sudo make install
 ```
-will build and install only the **Otter core** (*libotter.a*) library and the **Otter Server** (*otterServer*) executable.
 
-
+will build and install only the **Otter core** (_libotter.a_) library and the **Otter Server** (_otterServer_) executable.
 
 ## Creating a project
 
@@ -108,7 +105,6 @@ otter create path/myNewProject
 A directory containing your new Xcode project will be created, including some boiler plate code to get you started:
 
 <img width="1072" alt="Screenshot 2022-03-15 at 14 41 02" src="https://user-images.githubusercontent.com/28928394/158390513-1ec90cfb-5881-45d4-b453-8d766fea2634.png">
-
 
 ## Using Otter
 
@@ -140,7 +136,6 @@ q.circle(Vec2(5, 5), 5);
 q.rectangle(Vec2(0, 0), Vec2(5, 5));
 q.path({ Vec2(0, 0), Vec2(5, 5), Vec2(5, 0), Vec2(0, 0) });
 ```
-
 
 ## Gallery
 
