@@ -15,6 +15,8 @@
 #include <iostream>
 #include <unistd.h>
 #include <chrono>
+#include <functional>
+#include <utility>
 
 // boost
 #include <boost/asio.hpp>
