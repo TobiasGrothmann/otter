@@ -7,6 +7,8 @@ using namespace std;
 void OtterSampleProjectOF::setup()
 {
     updateOnParamChange = true;
+    
+    FLOAT_SETUP(exampleSliderValue, 0.5, 0.0, 1.0);
 }
 
 Queue OtterSampleProjectOF::create(const State& state)

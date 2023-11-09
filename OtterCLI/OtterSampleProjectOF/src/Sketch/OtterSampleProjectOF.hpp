@@ -12,4 +12,6 @@ public:
     
     virtual void setup() override;
     virtual otter::Queue create(const State& state) override;
+    
+    FLOAT exampleSliderValue;
 };
