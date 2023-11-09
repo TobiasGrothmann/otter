@@ -15,6 +15,7 @@
 
 // voronoi
 #include "Voronoi/Voronoi.hpp"
+#include "Voronoi/VoronoiFunction.hpp"
 
 // qr code
 #include "QrCode/QrCode.hpp"

@@ -12,6 +12,8 @@
 		840EE3E027CD17B100FB8913 /* libOtterUtil.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845BFBA8245752AD000BA648 /* libOtterUtil.a */; };
 		840FAA5327CD4556008D3330 /* ttfParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 840FAA5227CD4556008D3330 /* ttfParser.h */; };
 		841A52AA2705AC4E000AEB30 /* simple_svg_1.0.0.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 841A52A92705AC4E000AEB30 /* simple_svg_1.0.0.hpp */; };
+		843BCBFC2AFD51F100340028 /* VoronoiFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843BCBFA2AFD51F100340028 /* VoronoiFunction.cpp */; };
+		843BCBFD2AFD51F100340028 /* VoronoiFunction.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 843BCBFB2AFD51F100340028 /* VoronoiFunction.hpp */; };
 		845BFBAC245752AD000BA648 /* OtterUtil.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 845BFBAB245752AD000BA648 /* OtterUtil.hpp */; };
 		845BFBBA245753CE000BA648 /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845BFBB7245753CE000BA648 /* Font.cpp */; };
 		845BFBBC245753CE000BA648 /* Font.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 845BFBB9245753CE000BA648 /* Font.hpp */; };
@@ -57,6 +59,8 @@
 		84093A2D27D90A8E008B5EEF /* jc_voronoi_clip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jc_voronoi_clip.h; sourceTree = "<group>"; };
 		840FAA5227CD4556008D3330 /* ttfParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttfParser.h; sourceTree = "<group>"; };
 		841A52A92705AC4E000AEB30 /* simple_svg_1.0.0.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = simple_svg_1.0.0.hpp; sourceTree = "<group>"; };
+		843BCBFA2AFD51F100340028 /* VoronoiFunction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VoronoiFunction.cpp; sourceTree = "<group>"; };
+		843BCBFB2AFD51F100340028 /* VoronoiFunction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VoronoiFunction.hpp; sourceTree = "<group>"; };
 		845BFBA8245752AD000BA648 /* libOtterUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOtterUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		845BFBAB245752AD000BA648 /* OtterUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OtterUtil.hpp; sourceTree = "<group>"; };
 		845BFBB7245753CE000BA648 /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				84C75FCC27920B6100C22E20 /* Voronoi.hpp */,
 				84F83E1F27D528D000A651FD /* VoronoiCell.cpp */,
 				84F83E2027D528D000A651FD /* VoronoiCell.hpp */,
+				843BCBFA2AFD51F100340028 /* VoronoiFunction.cpp */,
+				843BCBFB2AFD51F100340028 /* VoronoiFunction.hpp */,
 			);
 			path = Voronoi;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849A82E027984F9C00DFBED1 /* QrCode.hpp in Headers */,
+				843BCBFD2AFD51F100340028 /* VoronoiFunction.hpp in Headers */,
 				84F3DC9726834BD100F7CE63 /* Boolean.hpp in Headers */,
 				845BFBBC245753CE000BA648 /* Font.hpp in Headers */,
 				841A52AA2705AC4E000AEB30 /* simple_svg_1.0.0.hpp in Headers */,
@@ -346,6 +353,7 @@
 				84F3DC9626834BD100F7CE63 /* Boolean.cpp in Sources */,
 				84C7855E246D3B9D005779A9 /* SVG.cpp in Sources */,
 				845BFBBA245753CE000BA648 /* Font.cpp in Sources */,
+				843BCBFC2AFD51F100340028 /* VoronoiFunction.cpp in Sources */,
 				84F3DC9B26834C1D00F7CE63 /* ClipperConvert.cpp in Sources */,
 				84F83E2127D528D000A651FD /* VoronoiCell.cpp in Sources */,
 				848FCBD226A9C82200829A8A /* Image.cpp in Sources */,
