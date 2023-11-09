@@ -106,6 +106,24 @@ void Queue::dot(const Vec2& point)
 {
     add(Circle::create(point, 0.01));
 }
+void Queue::dotSpiral(const Vec2& point, double radius)
+{
+    double currentRadius = 0.0;
+    double angle = 0.0;
+    shared_ptr<Path> spiral = Path::create();
+    while (currentRadius < radius) // spiral out from center to outer radius
+    {
+        spiral->add(point + Vec2::polar(angle, currentRadius));
+        angle += (M_PI * 2.0) / 8.0;
+        currentRadius += radius / 16.0;
+    }
+    for (int i = 0; i < 15; i++) // close circle on outer radius
+    {
+        spiral->add(point + Vec2::polar(angle, radius));
+        angle += (M_PI * 2.0) / 10.0;
+    }
+    add(spiral);
+}
 void Queue::bezier(const vector<Vec2>& points)
 {
     add(Bezier::create(points));
