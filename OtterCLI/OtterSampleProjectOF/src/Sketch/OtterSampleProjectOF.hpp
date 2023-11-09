@@ -4,6 +4,7 @@
 #include "ofxGui.h"
 #include "OtterSketchOF.hpp"
 #include "Otter.hpp"
+#include "OtterUtil.hpp"
 
 
 class OtterSampleProjectOF : public OtterSketchOF
