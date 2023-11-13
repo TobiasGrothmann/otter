@@ -35,7 +35,8 @@ public:
 	const QueueSettings* settings = nullptr;
 	SpeedDelayHandler* speedDraw = nullptr;
 	SpeedDelayHandler* speedTravel = nullptr;
-	SpeedDelayHandler* speedHead = nullptr;
+	SpeedDelayHandler* speedHeadDown = nullptr;
+	SpeedDelayHandler* speedHeadUp = nullptr;
 
 // methods
 	void runServer();

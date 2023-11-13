@@ -228,8 +228,16 @@ void OtterServer::setHead(bool value)
 	{
 		const float factor = (float)i / stepsTotal;
 		const float speedFactor = fmin(fmin(factor / settings->accellerationDistFactorHead, (1.0f - factor) / settings->accellerationDistFactorHead), 1.0f);
-		speedHead->setSpeedFactor(speedFactor);
-		stepWithDelay(Axis::Z, speedHead);
+		if (value) // moving head down
+		{
+			speedHeadDown->setSpeedFactor(speedFactor);
+			stepWithDelay(Axis::Z, speedHeadDown);
+		}
+		else
+		{
+			speedHeadUp->setSpeedFactor(speedFactor);
+			stepWithDelay(Axis::Z, speedHeadUp);
+		}
 	}
 	state.headDown = value;
 }
@@ -433,10 +441,12 @@ void OtterServer::setupSettings(const QueueSettings& newSettings)
 	settings = &newSettings;
 	if (speedDraw) delete speedDraw;
 	if (speedTravel) delete speedTravel;
-	if (speedHead) delete speedHead;
+	if (speedHeadDown) delete speedHeadDown;
+	if (speedHeadUp) delete speedHeadUp;
 	speedDraw = new SpeedDelayHandler(settings->speedDrawMin, settings->speedDrawMax, distPerStepAxis);
 	speedTravel = new SpeedDelayHandler(settings->speedTravelMin, settings->speedTravelMax, distPerStepAxis);
-	speedHead = new SpeedDelayHandler(settings->speedHeadMin, settings->speedHeadMax, distPerStepHead);
+	speedHeadDown = new SpeedDelayHandler(settings->speedHeadDownMin, settings->speedHeadDownMax, distPerStepHead);
+	speedHeadUp = new SpeedDelayHandler(settings->speedHeadUpMin, settings->speedHeadUpMax, distPerStepHead);
 }
 
 void OtterServer::pauseQueue()

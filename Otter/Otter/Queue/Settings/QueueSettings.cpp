@@ -17,8 +17,10 @@ void QueueSettings::serialize(ostream &os) const
         << accellerationDistDraw        << splitter
         << edgeSlowdownPow              << splitter
         << penPressure                  << splitter
-        << speedHeadMin                 << splitter
-        << speedHeadMax                 << splitter
+        << speedHeadDownMin             << splitter
+        << speedHeadDownMax             << splitter
+        << speedHeadUpMin               << splitter
+        << speedHeadUpMax               << splitter
         << accellerationDistFactorHead  << splitter
         << speedTravelMin               << splitter
         << speedTravelMax               << splitter
@@ -34,15 +36,17 @@ shared_ptr<Serializable> QueueSettings::deserialize(const vector<string> &subEle
     settings->accellerationDistDraw         = (float)Math::doubleFromString(subElements[2]);
     settings->edgeSlowdownPow               = (float)Math::doubleFromString(subElements[3]);
     settings->penPressure                   = (float)Math::doubleFromString(subElements[4]);
-    settings->speedHeadMin                  = (float)Math::doubleFromString(subElements[5]);
-    settings->speedHeadMax                  = (float)Math::doubleFromString(subElements[6]);
-    settings->accellerationDistFactorHead   = (float)Math::doubleFromString(subElements[7]);
-    settings->speedTravelMin                = (float)Math::doubleFromString(subElements[8]);
-    settings->speedTravelMax                = (float)Math::doubleFromString(subElements[9]);
-    settings->accellerationDistTravel       = (float)Math::doubleFromString(subElements[10]);
+    settings->speedHeadDownMin              = (float)Math::doubleFromString(subElements[5]);
+    settings->speedHeadDownMax              = (float)Math::doubleFromString(subElements[6]);
+    settings->speedHeadUpMin                = (float)Math::doubleFromString(subElements[7]);
+    settings->speedHeadUpMax                = (float)Math::doubleFromString(subElements[8]);
+    settings->accellerationDistFactorHead   = (float)Math::doubleFromString(subElements[9]);
+    settings->speedTravelMin                = (float)Math::doubleFromString(subElements[10]);
+    settings->speedTravelMax                = (float)Math::doubleFromString(subElements[11]);
+    settings->accellerationDistTravel       = (float)Math::doubleFromString(subElements[12]);
     
-    shared_ptr<Serializable> itemSer = SerializableFactory::createPtr(subElements[11]);
-    shared_ptr<Pen> item = dynamic_pointer_cast<Pen>(itemSer);
+    shared_ptr<Serializable> penSer = SerializableFactory::createPtr(subElements[13]);
+    shared_ptr<Pen> item = dynamic_pointer_cast<Pen>(penSer);
     settings->pen = *item.get();
     
     return settings;
