@@ -58,7 +58,7 @@ public:
     /// @param point dot location
     void dot(const Vec2& point);
     /// helper method to add a small dot on paper wiggling the pen
-    void dotSpiral(const Vec2& point, double radius = 0.04);
+    void dotSpiral(const Vec2& point, double radius = 0.009);
     /// helper method to add a bezier curve
     /// \code{.cpp}
     /// q.add(Bezier::create([...]);
