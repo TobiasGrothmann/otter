@@ -22,8 +22,8 @@ public:
     float penPressure = 0.825f;                 // between 0.0f to 1.0f
     float speedHeadDownMin = 1.8f;              // cm / second
     float speedHeadDownMax = 20.0f;             // cm / second
-    float speedHeadUpMin = 18.0f;               // cm / second
-    float speedHeadUpMax = 25.0f;               // cm / second
+    float speedHeadUpMin = 35.0f;               // cm / second
+    float speedHeadUpMax = 35.0f;               // cm / second
     float accellerationDistFactorHead = 0.17f;  // between 0.0f and 0.5f, fraction of distance used to accellerate/decellerate
     
     // travel
